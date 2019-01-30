@@ -52,6 +52,10 @@ class Civility
         return $this->id;
     }
 
+    public function __toString() {
+        return (string) "Voir les informations";
+    }
+
     public function getName(): ?string
     {
         return $this->name;

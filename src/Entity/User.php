@@ -89,6 +89,10 @@ class User extends BaseUser
         return $this->id;
     }
 
+    public function __toString() {
+        return (string) "Voir l'utilisateur";
+    }
+
     public function getDataUser(): ?DataUser
     {
         return $this->dataUser;

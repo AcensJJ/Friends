@@ -48,7 +48,7 @@ class DataUser
     private $instagram;
 
     public function __toString() {
-        return (string) "Voir les photos";
+        return (string) "Voir la data";
     }
     
     public function getId(): ?int

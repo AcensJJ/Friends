@@ -52,6 +52,10 @@ class Report
         return $this->id;
     }
 
+    public function __toString() {
+        return (string) "Voir le report";
+    }
+
     public function getReportedBy(): ?User
     {
         return $this->reportedBy;

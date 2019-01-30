@@ -31,6 +31,10 @@ class LikeContent
         return $this->id;
     }
 
+    public function __toString() {
+        return (string) "Voir le like";
+    }
+
     public function getContent(): ?Content
     {
         return $this->content;

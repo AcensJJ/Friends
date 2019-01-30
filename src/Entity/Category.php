@@ -43,6 +43,10 @@ class Category
         return $this->id;
     }
 
+    public function __toString() {
+        return (string) "Voir la catégorie";
+    }
+
     /**
      * @return Collection|Activity[]
      */

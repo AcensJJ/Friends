@@ -84,6 +84,10 @@ class Content
         return $this->id;
     }
 
+    public function __toString() {
+        return (string) "Voir la publication";
+    }
+
     public function getTitle(): ?string
     {
         return $this->title;

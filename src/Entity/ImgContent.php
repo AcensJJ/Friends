@@ -31,6 +31,10 @@ class ImgContent
         return $this->id;
     }
 
+    public function __toString() {
+        return (string) "Image";
+    }
+
     public function getContent(): ?Content
     {
         return $this->content;

@@ -27,7 +27,7 @@ class Hobbies
     private $activity;
 
     public function __toString() {
-        return (string) "Voir les loisirs";
+        return (string) "Voir le loisir";
     }
     
     public function getId(): ?int

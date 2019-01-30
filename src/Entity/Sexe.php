@@ -38,6 +38,10 @@ class Sexe
         return $this->id;
     }
 
+    public function __toString() {
+        return (string) "Voir le genre";
+    }
+
     public function getName(): ?string
     {
         return $this->name;

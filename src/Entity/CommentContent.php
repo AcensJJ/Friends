@@ -54,6 +54,10 @@ class CommentContent
         return $this->id;
     }
 
+    public function __toString() {
+        return (string) "Voir le commentaire";
+    }
+
     public function getContent(): ?Content
     {
         return $this->content;

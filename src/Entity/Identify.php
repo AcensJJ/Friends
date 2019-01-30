@@ -37,6 +37,10 @@ class Identify
         return $this->id;
     }
 
+    public function __toString() {
+        return (string) "Voir l'identification";
+    }
+
     public function getContent(): ?Content
     {
         return $this->content;

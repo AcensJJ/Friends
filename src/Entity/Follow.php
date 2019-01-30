@@ -31,6 +31,10 @@ class Follow
         return $this->id;
     }
 
+    public function __toString() {
+        return (string) "utilisateur";
+    }
+
     public function getFollower(): ?User
     {
         return $this->follower;
