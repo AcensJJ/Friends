@@ -1,12 +1,158 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
+	<head>
+		<meta charset="UTF-8">
+		<title>Friends</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+             {% block stylesheets %}
+                <link rel="stylesheet" type="text/css" href="{{ asset('semantic/semantic.min.css') }}">
+                {# main style #}
+                <link rel="stylesheet" type="text/css" href="{{ asset('main/style.css')}}">
+                {# template #}
+                <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{ asset('css/line-awesome.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{ asset('css/line-awesome-font-awesome.min.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.mCustomScrollbar.min.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{ asset('lib/slick/slick.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{ asset('lib/slick/slick-theme.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css')}}">
+            {% endblock %}
+
+		<link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}" />
+		{# semantic #} <!-- laisser en premier pour pas avoir de conflit avec le template (template change les valeurs) -->
+		
+	</head>
+	<div class="wrapper">
+		{% if app.user != null %}
+		<header>
+
+			<div class="container">
+				<div class="header-data">
+					<div class="search-bar">
+						<form method="get" action="{{ path('search') }}">
+							<input type="text" name="word" placeholder="Rechercher...">
+							<button  type="submit"><i class="la la-search"></i></button>
+						</form>
+					</div><!--search-bar end-->
+					<nav>
+						<ul>
+							<li>
+								<a href="{{ path('social') }}" title="">
+									<span><i class="home icon"></i></span>
+									Accueil
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('social') }}" title="">
+									<span><i class="users icon"></i></span>
+									Ajouter des amis
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('categories') }}" title="">
+									<span><i class="edit icon"></i></span>
+									Activités
+								</a>
+							</li>
+							<li>
+								<a href="{{ path('social') }}" title="" class="not-box-open">
+									<span><i class="envelope icon"></i></span>
+									Messages
+								</a>
+								<div class="notification-box msg">
+									<div class="nt-title">
+										<h4>Vos conversations</h4>
+									</div>
+									<div class="nott-list">
+										<div class="notfication-details">
+							  				<div class="noty-user-img">
+							  					<i class="bell icon"></i>
+							  				</div>
+							  				<div class="notification-info">
+							  					<h3><a href="messages.html" title="">Jassica William</a> </h3>
+							  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+							  					<span>2 min ago</span>
+							  				</div><!--notification-info -->
+						  				</div>
+						  				<div class="view-all-nots">
+						  					<a href="messages.html" title="">Voir Tout</a>
+						  				</div>
+									</div><!--nott-list end-->
+								</div><!--notification-box end-->
+							</li>
+							<li>
+								<a href="#" title="" class="not-box-open">
+									<span><i class="bell icon"></i></span>
+									Notification
+								</a>
+								<div class="notification-box">
+									<div class="nt-title">
+										<h4>Notification</h4>
+									</div>
+									<div class="nott-list">
+						  				<div class="notfication-details">
+							  				<div class="noty-user-img">
+							  					<img src="{{ asset('images/resources/ny-img2.png')}}" alt="">
+							  				</div>
+							  				<div class="notification-info">
+							  					<h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
+							  					<span>2 min ago</span>
+							  				</div><!--notification-info -->
+						  				</div>
+						  				<div class="view-all-nots">
+						  					<a href="#" title="">View All Notification</a>
+						  				</div>
+									</div><!--nott-list end-->
+								</div><!--notification-box end-->
+							</li>
+						</ul>
+						
+
+					</nav><!--nav end-->
+					{% if app.user.dataUser != null %}
+					<div class="menu-btn">
+						<a href="#" title=""><i class="fa fa-bars"></i></a>
+					</div><!--menu-btn end-->
+					<div class="user-account">
+						<div class="user-info">	
+							<img style="border-radius: 100%; height: 30px; wight: 30px;" src="{{ asset(app.user.DataUser.link) }}" alt="">
+							<a title="">  {{  app.user }}</a>
+							<i class="la la-sort-down"></i>
+						</div>
+						<div class="user-account-settingss">
+							<h3>Paramètre</h3>
+							<ul class="us-links">
+								<li><a href="{{ path('user_page_profil') }}" title="">Votre Profil</a></li>
+								<li><a href="{{ path('civility') }}" title="">Configurer votre Profil</a></li>
+								<li><a href="{{ path('social') }}" title="">Paramètre du compte</a></li>
+								<li><a href="{{ path('social') }}" title="">Conditions générales</a></li>
+							</ul>
+							<h3 class="tc"><a href="{{ path('fos_user_security_logout') }}">Logout</a></h3>
+						</div><!--user-account-settingss end-->
+					</div>
+					{% endif %}
+				</div><!--header-data end-->
+			</div>
+		</header><!--header end-->	
+	{% endif %}
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+	{% block body %} {% endblock %}
+
     </body>
+	{# template #}
+    
+	{% block javascripts %}
+	<script type="text/javascript" src="{{ asset('js/jquery.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/popper.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery.mCustomScrollbar.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('lib/slick/slick.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/scrollbar.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('js/script.js')}}"></script>
+    {% endblock %}
 </html>

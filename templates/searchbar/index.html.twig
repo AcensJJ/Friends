@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<section class="companies-info">
+			<div class="container">
+				<div class="company-title">
+					<h3>Résultat de la recherche : "{{ search }}" - {{ research | length }} resultat(s)</h3>
+				</div><!--company-title end-->
+				<div class="companies-list">
+					<div class="row">
+						{% for profil in research %}
+						<div class="col-lg-3 col-md-4 col-sm-6 col-12">
+							<div class="company_profile_info">
+								<div class="company-up-info">
+									<img src="images/resources/pf-icon1.png" alt="">
+									<h3>{{profil.name}}</h3>
+									<h4>{{profil.first_name}}</h4>
+									<ul>
+										<li><a href="#" title="" class="follow">Follow</a></li>
+										<li><a href="#" title="" class="message-us"><i class="fa fa-envelope"></i></a></li>
+										<li><a href="#" title="" class="hire-us">Hire</a></li>
+									</ul>
+								</div>
+								<a href="#" title="" class="view-more-pro">View Profile</a>
+							</div><!--company_profile_info end-->
+						</div>
+						{% endfor  %} 
+					</div>
+				
+					
+				
+				</div><!--companies-list end-->
+				<div class="process-comm">
+					<a href="#" title=""><img src="images/process-icon.png" alt=""></a>
+				</div>
+			</div>
+		</section><!--companies-info end-->
+		{% endblock  %}
