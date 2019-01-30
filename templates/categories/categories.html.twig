@@ -4,7 +4,7 @@
 		<title>Future Imperfect by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ asset('assetsaccueil/css/main.css') }}" />
+		<link rel="stylesheet" href="{{ asset('assets/accueil//css/main.css') }}" />
 	</head>
 	<body class="is-preload">
 			<div id="wrapper">
@@ -80,7 +80,7 @@
  {% for categorie in categories %}
 						<article class="style1">						
 							<span class="image">
-								<img src="{{ asset('images/pic01.jpg') }}" alt="" />
+								<img src="{{ asset('assets/images/pic01.jpg') }}" alt="" />
 							</span>
 							<a href="{{ path('souscategories',{"id":categorie.id})}}">
 								<h2>{{ categorie.name }}</h2>
@@ -91,11 +91,11 @@
 						</article>
  {% endfor %}			</section>
 		<!-- Scripts -->
-			<script src="{{ asset('assetsaccueil/js/jquery.min.js') }}"></script>
-			<script src="{{ asset('assetsaccueil/js/browser.min.js') }}"></script>
-			<script src="{{ asset('assetsaccueil/js/breakpoints.min.js') }}"></script>
-			<script src="{{ asset('assetsaccueil/js/util.js') }}"></script>
-			<script src="{{ asset('assetsaccueil/js/main.js') }}"></script>
+			<script src="{{ asset('assets/accueil/js/jquery.min.js') }}"></script>
+			<script src="{{ asset('assets/accueil/js/browser.min.js') }}"></script>
+			<script src="{{ asset('assets/accueil/js/breakpoints.min.js') }}"></script>
+			<script src="{{ asset('assets/accueil/js/util.js') }}"></script>
+			<script src="{{ asset('assets/accueil/js/main.js') }}"></script>
 
 
 	</body>
