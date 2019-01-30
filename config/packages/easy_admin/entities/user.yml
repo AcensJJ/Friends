@@ -21,7 +21,6 @@ easy_admin:
                   - { property: 'roles', label: 'Role(s)' }
                   - { property: 'enabled', label: 'Activation' }
                   - { property: 'civility', label: 'Information' }
-                  - { property: 'hobbies', label: 'Activité' }
                   - { property: 'contents', label: 'Publication' }
                   - { property: 'commentContents', label: 'Commentaire de publication' }
                   - { property: 'reports', label: 'Element reporté' }
