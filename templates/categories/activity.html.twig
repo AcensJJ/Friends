@@ -1,18 +1,15 @@
 {% extends 'base.html.Twig' %}
 
-{% block stylesheets %}
+{% block stylesheets_before %}
 	<link rel="stylesheet" href="{{ asset('assets/accueil/css/main.css') }}" />
 {% endblock %}
 {% block body %}
-							
-		
 		<section>
-			<div class="company-title">
-				<a href="{{ path('categories') }}" title="">
-					<h3 class="h3-hover" style="text-align: center;">Voir les catégories</h3>
+			<a href="{{ path('categories') }}" title="">
+					<h3  style="text-align: center;">Voir les catégories</h3>
 				</a>
-			</div>
 			<div class="row">
+			
 				{% for act in activity %}
 				<div class="col-4 col-6-medium col-12-small">
 					<section class="box">
@@ -33,10 +30,4 @@
 		</section>
 	</div>
 {% endblock %}	
-{% block javascripts %}
-	<script src="{{ asset('assets/accueil/js/jquery.min.js') }}"></script>
-	<script src="{{ asset('assets/accueil/js/browser.min.js') }}"></script>
-	<script src="{{ asset('assets/accueil/js/breakpoints.min.js') }}"></script>
-	<script src="{{ asset('assets/accueil/js/util.js') }}"></script>
-	<script src="{{ asset('assets/accueil/js/main.js') }}"></script>
-{% endblock %}
+

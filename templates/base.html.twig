@@ -7,15 +7,14 @@
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
         {% block stylesheets_before %}{% endblock %}
-        <link
-            rel="stylesheet" type="text/css" href="{{ asset('assets/semantic/semantic.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/semantic/semantic.min.css') }}">
         {# main style #}
-        <link
-            rel="stylesheet" type="text/css" href="{{ asset('assets/main/style.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/main/style.css')}}">
         {# template #}
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css')}}">
         <link rel="icon" type="image/png" href="{{ asset('assets/images/logo.png') }}"/>{# semantic #}
-        <!-- laisser en premier pour pas avoir de conflit avec le template (template change les valeurs) -->{% block stylesheets %}
+        <!-- laisser en premier pour pas avoir de conflit avec le template (template change les valeurs) -->
+        {% block stylesheets %}
         {% endblock %}
     </head>
     {% if app.user != null %}
@@ -102,5 +101,10 @@
                 {% block body %}{% endblock %}
             </body>
             {# template #}
+            	<script src="{{ asset('assets/accueil/js/jquery.min.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/browser.min.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/breakpoints.min.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/util.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/main.js') }}"></script>
             {% block javascripts %}{% endblock %}
 </html>
