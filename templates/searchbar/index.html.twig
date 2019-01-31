@@ -1,1 +1,39 @@
 
+{% extends 'base.html.Twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('assets/accueil/css/main.css') }}"/>
+{% endblock %}
+{% block body %}
+
+<section>
+    <h3>Résultat de la recherche : "{{ search }}" - {{ research | length }} resultat(s)</h3>
+
+    <div class="row">
+        {% for profil in research %}
+        <div class="col-4 col-6-medium col-12-small">
+            <section class="box">
+                <a href="#" class="image featured"><img src="{{ asset('assets/images/pic02.jpg') }}" alt=""/></a>
+                <header>
+                    <h3>{{profil.name}}</h3>
+                </header>
+                <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+                <footer>
+                    <ul class="actions">
+                        <li>
+                            <a href="#" class="button alt">Find out more</a>
+                        </li>
+                    </ul>
+                </footer>
+            </section>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+</div>{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('assets/accueil/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/accueil/js/browser.min.js') }}"></script>
+<script src="{{ asset('assets/accueil/js/breakpoints.min.js') }}"></script>
+<script src="{{ asset('assets/accueil/js/util.js') }}"></script>
+<script src="{{ asset('assets/accueil/js/main.js') }}"></script>
+{% endblock %}

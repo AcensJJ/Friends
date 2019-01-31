@@ -27,6 +27,7 @@ class SearchbarController extends AbstractController
             'controller_name' => 'search',
             'research' => $research,
             'search' => $search,
+            'request' => $request,
         ]);
     }
 
