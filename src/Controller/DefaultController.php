@@ -67,8 +67,8 @@ class DefaultController extends AbstractController
         $userPP = $user->getDataUser();
         if($userPP == null){
             $userPP = new DataUser;
-            $userPP->setLink("images/resources/pf-img4.jpg")
-                   ->setBgLink("images/resources/cover-img.jpg")
+            $userPP->setLink("assets/images/resources/pf-img4.jpg")
+                   ->setBgLink("assets/images/resources/cover-img.jpg")
                    ->setUser($user);
             $manager->persist($userPP);
             $manager->flush();

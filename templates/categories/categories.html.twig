@@ -1,31 +1,38 @@
 
 {% extends 'base.html.Twig' %}
-		 {% block body %}
-		 			{% block stylesheets %}
-					<link rel="stylesheet" href="{{ asset('assets/accueil//css/main.css') }}" />
-					{% endblock %}
 
-					<section class="tiless">   
- {% for categorie in categories %}
-						<article class="style1">						
-							<span class="image">
-								<img src="{{ asset('assets/images/pic01.jpg') }}" alt="" />
-							</span>
-							<a href="{{ path('souscategories',{"id":categorie.id})}}">
-								<h2>{{ categorie.name }}</h2>
-								<div class="content">
-									<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-								</div>
-							</a>
-						</article>
- {% endfor %}			</section>
-		{% endblock %}
-		{% block javascripts %}
-  
-			<script src="{{ asset('assets/accueil/js/jquery.min.js') }}"></script>
-			<script src="{{ asset('assets/accueil/js/browser.min.js') }}"></script>
-			<script src="{{ asset('assets/accueil/js/breakpoints.min.js') }}"></script>
-			<script src="{{ asset('assets/accueil/js/util.js') }}"></script>
-			<script src="{{ asset('assets/accueil/js/main.js') }}"></script>
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/accueil/css/main.css') }}" />
+{% endblock %}
 
-  {% endblock %}
+{% block body %}
+
+	<section class="tiless">   
+		{% for categorie in categories %}
+		<article class="style{{i}}">						
+			<span class="image">
+				<img style="height: 300px; width: 475px;" src="{{ asset(categorie.image) }}" alt="" />
+			</span>
+			<a href="{{ path('souscategories',{"id":categorie.id})}}">
+				<h2>{{ categorie.name }}</h2>
+				<div class="content">
+					<p>Voir cette catégorie !</p>
+				</div>
+			</a>
+		</article>
+		{% set i = i + 1 %}
+		{% if i > 6 %}
+		{% set i = 1 %}
+		{% endif %}
+		{% endfor %}			
+	</section>
+{% endblock %}
+{% block javascripts %}
+
+	<script src="{{ asset('assets/accueil/js/jquery.min.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/browser.min.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/breakpoints.min.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/util.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/main.js') }}"></script>
+
+{% endblock %}

@@ -14,8 +14,8 @@ class DataUserFixtures extends Fixture implements DependentFixtureInterface
         $adminDT = new DataUser;
         $admin = $this->getReference('admin');
         $adminDT->setUser($admin)
-                ->setLink("images/resources/pf-img4.jpg")
-                ->setBgLink("images/resources/cover-img.jpg")
+                ->setLink("assets/images/resources/pf-img4.jpg")
+                ->setBgLink("assets/images/resources/cover-img.jpg")
                 ->setFacebook("fake")
                 ->setTwitter("fake")
                 ->setInstagram("fake");
@@ -24,29 +24,29 @@ class DataUserFixtures extends Fixture implements DependentFixtureInterface
         $userDT = new DataUser;
         $user = $this->getReference('user');
         $userDT->setUser($user)
-                ->setLink("images/resources/pf-img4.jpg")
-                ->setBgLink("images/resources/cover-img.jpg");
+                ->setLink("assets/images/resources/pf-img4.jpg")
+                ->setBgLink("assets/images/resources/cover-img.jpg");
         $manager->persist($userDT);
 
         $jjDT = new DataUser;
         $jj = $this->getReference('jj');
         $jjDT->setUser($jj)
-                ->setLink("images/resources/pf-img4.jpg")
-                ->setBgLink("images/resources/cover-img.jpg");
+                ->setLink("assets/images/resources/pf-img4.jpg")
+                ->setBgLink("assets/images/resources/cover-img.jpg");
         $manager->persist($jjDT);
 
         $riuDT = new DataUser;
         $riu = $this->getReference('riu');
         $riuDT->setUser($riu)
-                ->setLink("images/resources/pf-img4.jpg")
-                ->setBgLink("images/resources/cover-img.jpg");
+                ->setLink("assets/images/resources/pf-img4.jpg")
+                ->setBgLink("assets/images/resources/cover-img.jpg");
         $manager->persist($riuDT);
 
         $antoineDT = new DataUser;
         $antoine = $this->getReference('antoine');
         $antoineDT->setUser($antoine)
-                ->setLink("images/resources/pf-img4.jpg")
-                ->setBgLink("images/resources/cover-img.jpg");
+                ->setLink("assets/images/resources/pf-img4.jpg")
+                ->setBgLink("assets/images/resources/cover-img.jpg");
         $manager->persist($antoineDT);
 
         $manager->flush();

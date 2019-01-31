@@ -16,31 +16,31 @@ class ActivityFixtures extends Fixture implements DependentFixtureInterface
         
         $hiver = new Activity();
         $hiver->setName('Sports d\'hiver')
-            ->setImg('images/activity/hiver.png')
+            ->setImg('assets/images/activity/sport/hiver.png')
             ->setCategory($sport);
         $manager->persist($hiver);
 
         $equipe = new Activity();
         $equipe->setName('Sports d\'équipe')
-            ->setImg('images/activity/equipe.jpg')
+            ->setImg('assets/images/activity/sport/equipe.jpg')
             ->setCategory($sport);
         $manager->persist($equipe);
 
         $indi = new Activity();
         $indi->setName('Sports individuels')
-            ->setImg('images/activity/individuel.jpg')
+            ->setImg('assets/images/activity/sport/individuel.jpg')
             ->setCategory($sport);
         $manager->persist($indi);
         
         $aqua = new Activity();
         $aqua->setName('Sports aquatiques')
-            ->setImg('images/activity/aquatique.jpg')
+            ->setImg('assets/images/activity/sport/aquatique.jpg')
             ->setCategory($sport);
         $manager->persist($aqua);
 
         $muscu = new Activity();
         $muscu->setName('Musculation')
-            ->setImg('images/activity/muscu.png')
+            ->setImg('assets/images/activity/sport/muscu.png')
             ->setCategory($sport);
         $manager->persist($muscu);
         
@@ -49,31 +49,31 @@ class ActivityFixtures extends Fixture implements DependentFixtureInterface
 
         $cinema = new Activity();
         $cinema->setName('Culture cinématographique')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($cult);
         $manager->persist($cinema);
 
         $lecture = new Activity();
         $lecture->setName('Culture littéraire')
-            ->setImg('images/activity/')    
+            ->setImg('assets/images/activity/')    
             ->setCategory($cult);
         $manager->persist($lecture);
 
         $musique = new Activity();
         $musique->setName('Culture musicale')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($cult);
         $manager->persist($musique);
 
         $theatre = new Activity();
         $theatre->setName('Culture théâtrale')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($cult);
         $manager->persist($theatre);
 
         $artistique = new Activity();
         $artistique->setName('Culture artistique')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($cult);
         $manager->persist($artistique);
         
@@ -82,55 +82,55 @@ class ActivityFixtures extends Fixture implements DependentFixtureInterface
 
         $architecture  = new Activity();
         $architecture ->setName('architecture ')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($art);
         $manager->persist($architecture );
 
         $sculpture = new Activity();;
         $sculpture->setName('sculpture')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($art);
         $manager->persist($sculpture);
 
         $artsVisuels = new Activity();
         $artsVisuels->setName('arts visuels (peinture , dessin, etc.)')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($art);
         $manager->persist($artsVisuels);
 
         $musique = new Activity();
         $musique->setName('musique')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($art);
         $manager->persist($musique);
         
         $littérature = new Activity();
         $littérature->setName('littérature (poésie ou dramaturgie)')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($art);
         $manager->persist($littérature);
 
         $artsDeLaScène = new Activity();
         $artsDeLaScène->setName('arts de la scène (théâtre, danse, mime, cirque)')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($art);
         $manager->persist($artsDeLaScène);
 
         $cinema = new Activity();
         $cinema->setName('Cinéma')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($art);
         $manager->persist($cinema);
 
         $lesArtsMediatiques = new Activity();
         $lesArtsMediatiques->setName('Les arts médiatiques (télévision, radio, photographie)')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($art);
         $manager->persist($lesArtsMediatiques);
 
         $bd = new Activity();
         $bd->setName('La bande-dessinée')
-            ->setImg('images/activity/')
+            ->setImg('assets/images/activity/')
             ->setCategory($art);
         $manager->persist($bd);
 
