@@ -182,11 +182,11 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #2ebaae !important;
+			color: #FE2E2E !important;
 		}
 
 			a:hover:before {
-				color: #2ebaae !important;
+				color: #FE2E2E !important;
 			}
 
 	strong, b {
@@ -1891,8 +1891,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 1px #2ebaae;
-			color: #2ebaae !important;
+			box-shadow: inset 0 0 0 1px #FE2E2E;
+			color: #FE2E2E !important;
 		}
 
 			input[type="submit"]:hover:active,
@@ -2066,8 +2066,8 @@ input, select, textarea {
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #2ebaae;
-			box-shadow: inset 0 0 0 1px #2ebaae;
+			border-color: #FE2E2E;
+			box-shadow: inset 0 0 0 1px #FE2E2E;
 		}
 
 	.select-wrapper {
@@ -2199,8 +2199,8 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #2ebaae;
-			box-shadow: 0 0 0 1px #2ebaae;
+			border-color: #FE2E2E;
+			box-shadow: 0 0 0 1px #FE2E2E;
 		}
 
 	input[type="radio"] + label:before {
@@ -3562,7 +3562,7 @@ input, select, textarea {
 					}
 
 					#menu .links > li a:hover h3 {
-						color: #2ebaae;
+						color: #FE2E2E;
 					}
 
 				#menu .links > li:first-child {
