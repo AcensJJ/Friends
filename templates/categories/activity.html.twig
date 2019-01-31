@@ -2,17 +2,55 @@
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('assets/accueil/css/main.css') }}" />
+
+	<style>
+	.box{
+		background-color : white;
+		padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 50px;	
+	text-align: center;
+	}
+	.name{
+		padding: 5%;
+	}
+	.h3-hover:hover{ 
+	color: #fe2e2e;
+	}
+	.h3-hover{ 
+    background-color: #FFF;
+	text-align: center;
+	font-size: 25px;
+	}
+	.title{	
+	padding-bottom: 4%;
+	height: 50px;
+	}
+	.test{
+	}
+	.remove{
+		
+	}
+	</style>
 {% endblock %}
 {% block body %}
 		<section>
+<<<<<<< HEAD
+			<div class="title">
+				<a class="test" href="{{ path('categories') }}">
+					<h3 class="h3-hover">Voir les catégories</h3>
+=======
 			<a href="{{ path('categories') }}" title="">
 					<h3  style="text-align: center;">Voir les catégories</h3>
+>>>>>>> 1270c966e3360c5be4cf46388a00181119d5beb6
 				</a>
 			<div class="row">
 			
 				{% for act in activity %}
 				<div class="col-4 col-6-medium col-12-small">
 					<section class="box">
+<<<<<<< HEAD
 						<a href="#" class="image featured"><img src="{{ asset('assets/images/pic02.jpg') }}" alt="" /></a>
 						<header>
 							<h3>{{ act.name}}</h3>
@@ -23,6 +61,21 @@
 								<li><a href="#" class="button alt">Find out more</a></li>
 							</ul>
 						</footer>
+=======
+						<img style="height: 350px; width: 100%;" src="{{ asset(act.img) }}" alt="" />
+							
+						<h3 class="name">{{ act.name }}</h3>
+						<a href="{{ path('activity_change', {'id': act.id}) }}"
+						{# Si on a l'activiter alors ça ajoute la balise #}
+						{% if act.isHobbyByUser(app.user) %}
+						class="button alt js-act remove"
+						{% else %}
+						class="button alt js-act add"
+						{% endif %}
+						>
+						Ajouter la catégorie
+						</a>
+>>>>>>> d722c261cd9a2251e122f8cae3d397f4930a5334
 					</section>
 				</div>
 				{% endfor %}
@@ -30,4 +83,49 @@
 		</section>
 	</div>
 {% endblock %}	
+<<<<<<< HEAD
+{% block javascripts %}
+	<script src="{{ asset('assets/accueil/js/jquery.min.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/browser.min.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/breakpoints.min.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/util.js') }}"></script>
+	<script src="{{ asset('assets/accueil/js/main.js') }}"></script>
 
+	{# Axios #}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // fonction de l'evenement
+        function onClickBtnActivity(event){
+            event.preventDefault();
+            // les variables
+            const url = this.href;
+            const btn = this.querySelector('a.js-act')
+            // la requete
+            axios.get(url).then(function(response) {
+                if (btn.classList.contains('add')) {
+                    btn.classList.replace('add', 'remove');
+                } else {
+                    btn.classList.replace('remove', 'add'); 
+                } 
+            }).catch(function (error){
+                if (error.response.stats === 403){
+                    window.alert("Accès refusé !");
+                } else if (error.response.stats === 404){
+                    window.alert("Requête non trouvée !");
+                } else if (error.response.stats === 401){
+                    window.alert("Vous n'êtes pas connecté !");
+                } else {
+                    window.alert("Une erreur s'est produite, réessayez plus tard");
+                }
+            });
+        }
+        // pour chaque a avec la class js-act , boucle les liens
+        document.querySelectorAll('a.js-act').forEach(function(link){
+            // ajoute l'evenement on click
+            link.addEventListener('click', onClickBtnActivity);
+        })
+    </script>
+{% endblock %}
+=======
+
+>>>>>>> 1270c966e3360c5be4cf46388a00181119d5beb6
