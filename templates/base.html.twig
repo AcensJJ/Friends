@@ -23,15 +23,14 @@
             <!-- Header -->
             <header id="header">
                 <h1>
-                    <a href="index.html">Friends
+                    <a href="{{ path('social') }}">Friends
                     </a>
                 </h1>
                 <nav class="links">
                     <ul>
-                        <li><a href="{{path('social')}}">Mon profil</a></li>
-                        <li><a href="{{path('categories')}}">Catégories</a></li>
-                        <li><a href="{{path('social')}}">Messages</a></li>
-                        <li><a href="{{path('social')}}">Notification</a></li>
+                        <li><a href="{{ path('user_page_profil') }}">Mon profil</a></li>
+                        <li><a href="{{ path('categories') }}">Catégories</a></li>
+                        <li><a href="{ {path('social') }}">Notification</a></li>
                         <li><a href="#">Publier</a></li>
                     </ul>
                 </nav>
