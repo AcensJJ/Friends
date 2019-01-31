@@ -53,6 +53,14 @@
 		</div>
 		<div class="row">
 			{% for act in activity %}
+
+			{# config la data du btn #}
+			{% if act.isHobbyByUser(app.user) %}
+			{% set data = "Supprimer la catégorie"  %}
+			{% else %}
+			{% set data = "Ajouter la catégorie" %}
+			{% endif %}
+
 			<div class="col-4 col-6-medium col-12-small">
 				<section class="box">
 					<img style="height: 350px; width: 100%;" src="{{ asset(act.img) }}" alt="" />
@@ -67,7 +75,7 @@
 					{% else %}
 					class="colorText add"
 					{% endif %}>
-					Ajouter la catégorie
+					<span class="js-data">{{ data }}</span>
 					</div>
 					</a>
 					
@@ -89,11 +97,14 @@
             // les variables
             const url = this.href;
             const btn = this.querySelector('div.colorText');
+            const span = this.querySelector('span.js-data');
             // la requete
             axios.get(url).then(function(response) {
                 if (btn.classList.contains('add')) {
+					span.textContent = "Supprimer la catégorie";
                     btn.classList.replace('add', 'remove');
                 } else {
+					span.textContent = "Ajouter la catégorie";
                     btn.classList.replace('remove', 'add'); 
                 } 
             }).catch(function (error) {
