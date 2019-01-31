@@ -35,15 +35,18 @@
 	</style>
 {% endblock %}
 {% block body %}
-							
-		
 		<section>
+<<<<<<< HEAD
 			<div class="title">
 				<a class="test" href="{{ path('categories') }}">
 					<h3 class="h3-hover">Voir les catégories</h3>
+=======
+			<a href="{{ path('categories') }}" title="">
+					<h3  style="text-align: center;">Voir les catégories</h3>
+>>>>>>> 1270c966e3360c5be4cf46388a00181119d5beb6
 				</a>
-			</div>
 			<div class="row">
+			
 				{% for act in activity %}
 				<div class="col-4 col-6-medium col-12-small">
 					<section class="box">
@@ -67,6 +70,7 @@
 		</section>
 	</div>
 {% endblock %}	
+<<<<<<< HEAD
 {% block javascripts %}
 	<script src="{{ asset('assets/accueil/js/jquery.min.js') }}"></script>
 	<script src="{{ asset('assets/accueil/js/browser.min.js') }}"></script>
@@ -109,3 +113,6 @@
         })
     </script>
 {% endblock %}
+=======
+
+>>>>>>> 1270c966e3360c5be4cf46388a00181119d5beb6
