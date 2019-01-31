@@ -24,10 +24,12 @@ class CategoriesController extends AbstractController
 
         $repo = $this->getDoctrine()->getRepository(Category::class);
         $categories = $repo->findAll();
+        $i = 1;
 
         return $this->render('categories/categories.html.twig', [
             'controller_name' => 'Categories',
-            'categories' => $categories
+            'categories' => $categories,
+            'i' => $i
         ]);
     }
 
