@@ -15,7 +15,8 @@
                         {# template #}
                         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css')}}">
                             <link rel="icon" type="image/png" href="{{ asset('assets/images/logo.png') }}"/>{# semantic #}
-                            <!-- laisser en premier pour pas avoir de conflit avec le template (template change les valeurs) -->{% block stylesheets %}
+                            <!-- laisser en premier pour pas avoir de conflit avec le template (template change les valeurs) -->
+                            {% block stylesheets %}
                         {% endblock %}
                         </head>
                             {% if app.user != null %}
