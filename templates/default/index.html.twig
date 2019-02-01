@@ -44,7 +44,7 @@
 
 						<!-- Intro -->
 							<section id="intro">
-								<a href="{{ path('user_page_profil') }}" class="logo"><img src="assets/images/logo.jpg" alt="" /></a>
+								<a href="{{ path('user_page_profil') }}" class="logo"><img src="{{ app.user.dataUser.link }}" alt="" /></a>
 								<header>
 									<h2>{{ app.user.getUsername() }}</h2>
 									

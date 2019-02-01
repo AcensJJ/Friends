@@ -7,34 +7,44 @@
 	.box{
 		background-color : white;
 		padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    padding-bottom: 50px;	
-	text-align: center;
+		padding-right: 0px;
+		padding-top: 0px;
+		padding-bottom: 50px;	
+		text-align: center;
 	}
 	.name{
 		padding: 5%;
 	}
 	.h3-hover:hover{ 
-	color: #fe2e2e;
+		color: #fe2e2e;
 	}
 	.h3-hover{ 
-    background-color: #FFF;
-	text-align: center;
-	font-size: 25px;
+		background-color: #FFF;
+		text-align: center;
+		font-size: 25px;
 	}
 	.title{	
-	padding-bottom: 4%;
-	height: 50px;
-	}
-	.test{
+		padding-bottom: 5%;
+		height: 50px;
 	}
 	.remove{
-		
+		background-color: #EFFEEE;
+	}
+	.colorText{
+		padding-left: 25px;
+		padding-right: 25px;
+ 		border:1px solid black;
+	}
+	.js-act{
+		padding: 0;
+	}
+	.colorText:hover{ 
+ 	border:1px solid #fe2e2e;
 	}
 	</style>
 {% endblock %}
 {% block body %}
+<<<<<<< HEAD
 		<section>
 			<a href="{{ path('categories') }}" title="">
 					<h3  style="text-align: center;">Voir les catégories</h3>
@@ -57,7 +67,87 @@
 					</section>
 				</div>
 				{% endfor %}
+=======
+							
+	<section>
+		<div class="title">
+			<a href="{{ path('categories') }}">
+				<h3 class="h3-hover">Voir les catégories</h3>
+			</a>
+		</div>
+		<div class="row">
+			{% for act in activity %}
+
+			{# config la data du btn #}
+			{% if act.isHobbyByUser(app.user) %}
+			{% set data = "Supprimer la catégorie"  %}
+			{% else %}
+			{% set data = "Ajouter la catégorie" %}
+			{% endif %}
+
+			<div class="col-4 col-6-medium col-12-small">
+				<section class="box">
+					<img style="height: 350px; width: 100%;" src="{{ asset(act.img) }}" alt="" />
+						
+					<h3 class="name">{{ act.name }}</h3>
+					
+					<a href="{{ path('activity_change', {'id': act.id}) }}" class="button alt js-act">
+					<div 
+					{# Si on a l'activiter alors ça ajoute la balise #}
+					{% if act.isHobbyByUser(app.user) %}
+					class="colorText remove"
+					{% else %}
+					class="colorText add"
+					{% endif %}>
+					<span class="js-data">{{ data }}</span>
+					</div>
+					</a>
+					
+				</section>
+>>>>>>> 4cbae84a2d6d178282ddbbe0a60e7367feb0e314
 			</div>
-		</section>
-	</div>
+			{% endfor %}
+		</div>
+	</section>
+</div>
 {% endblock %}	
+{% block javascripts %}
+
+	{# Axios #}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // fonction de l'evenement
+        function onClickBtnActivity(event){
+            event.preventDefault();
+            // les variables
+            const url = this.href;
+            const btn = this.querySelector('div.colorText');
+            const span = this.querySelector('span.js-data');
+            // la requete
+            axios.get(url).then(function(response) {
+                if (btn.classList.contains('add')) {
+					span.textContent = "Supprimer la catégorie";
+                    btn.classList.replace('add', 'remove');
+                } else {
+					span.textContent = "Ajouter la catégorie";
+                    btn.classList.replace('remove', 'add'); 
+                } 
+            }).catch(function (error) {
+                if (error.response.status === 403) {
+                    window.alert("Accès refusé !");
+                } else if (error.response.status === 404) {
+                    window.alert("Requête non trouvée !");
+                } else if (error.response.status === 401) {
+                    window.alert("Vous n'êtes pas connecté !");
+                } else {
+                    window.alert("Une erreur s'est produite, réessayez plus tard");
+                }
+            });
+        }
+        // pour chaque a avec la class js-act , boucle les liens
+        document.querySelectorAll('a.js-act').forEach(function(link){
+            // ajoute l'evenement on click
+            link.addEventListener('click', onClickBtnActivity);
+        })
+    </script>
+{% endblock %}
