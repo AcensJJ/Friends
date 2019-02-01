@@ -1,6 +1,18 @@
 {% extends 'base.html.Twig' %}
 	{% block stylesheets %}
 		<link rel="stylesheet" href="{{ asset('assets/accueil/css/main.css') }}" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>  
+.modal-body{
+
+	height:350px;
+	overflow:hidden;
+
+}
+.modal-body:hover{overflow-y:auto;}
+
+
+</style>
 		 {% endblock %}
 		 {% block body %}
 		<!-- Wrapper -->
@@ -85,7 +97,43 @@
 					</section>
 
 			</div>
+
+			<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"s>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis feugiat felis. Etiam quis eros tortor. Nullam at nisi erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus nibh metus, interdum non orci sit amet, feugiat tempus libero. Sed sed odio nec sem posuere tempor sed non dui. Duis iaculis metus non ligula egestas ullamcorper. Aliquam dignissim dictum lectus at sollicitudin. Nam erat eros, lobortis ac interdum sit amet, gravida quis libero. Curabitur semper justo id sapien pellentesque, nec faucibus urna malesuada. Vestibulum hendrerit volutpat nisi id porta. Nulla ut mauris auctor, blandit arcu at, pretium dui. Aenean est mi, mollis at metus at, venenatis pharetra urna. Vivamus tincidunt sed urna vel gravida. Nulla ligula nisi, luctus ornare augue id, dictum aliquet libero. Duis ac augue in metus mattis consequat.
+
+Sed consequat non eros non accumsan. Aenean eleifend, eros id molestie commodo, sapien eros elementum ex, vel hendrerit elit nibh vel elit. In hac habitasse platea dictumst. Nullam sagittis nisl vitae consectetur ultrices. Cras dapibus diam ipsum, non commodo massa pharetra vel. Vivamus dictum suscipit neque ut vestibulum. Nulla et tortor ante. Maecenas ultrices pulvinar lectus, vitae commodo nunc hendrerit eu.
+
+In maximus massa vel justo finibus, non vestibulum leo scelerisque. Curabitur urna sapien, imperdiet sed tristique at, accumsan vitae mi. Nullam euismod velit sed sem laoreet pellentesque. Phasellus orci magna, ornare non porttitor ac, aliquet non ligula. Phasellus interdum odio ut massa lobortis interdum. Pellentesque finibus rutrum sapien non bibendum. Ut ex magna, imperdiet eu tempus luctus, efficitur nec felis. In at ullamcorper eros. Suspendisse non augue ex. Proin a venenatis sapien. Donec quis posuere magna, vel porttitor risus.
+
+Sed vel mattis mauris. Nullam aliquam nisi non nibh lacinia, at fermentum lorem rhoncus. Quisque fermentum mauris lectus, non facilisis sapien porta vel. Morbi pretium arcu sit amet erat tincidunt porttitor. Integer nec est lectus. Nullam efficitur urna in leo rutrum, id luctus orci vulputate. Morbi ac velit sit amet turpis semper pretium. Vestibulum aliquam nunc at elit semper eleifend. Nulla elementum rhoncus varius. Sed feugiat vulputate elit nec consequat. Integer vel metus ac nunc dapibus bibendum nec quis nibh. Etiam tincidunt nulla ut magna porttitor gravida. Quisque sed dui sed lorem lobortis maximus eget nec metus. Nulla convallis quis purus eget ullamcorper. Phasellus rutrum suscipit velit vitae feugiat.
+
+Nullam porttitor molestie convallis. In imperdiet purus libero, sed tempus libero euismod a. Nulla vulputate sem sed imperdiet iaculis. Quisque ultricies vulputate est fermentum bibendum. Nam tincidunt dapibus nulla et suscipit. Ut non sapien nec urna cursus tincidunt at a neque. Donec in bibendum lacus. Sed vel facilisis velit. Maecenas ut sem efficitur, euismod eros ac, pharetra ligula.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 {% block javascripts %}
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 {% endblock %}
