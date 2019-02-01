@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Content;
+use App\Entity\ImgContent;
 use App\Entity\LikeContent;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class PostController extends AbstractController
 {
     /**
-     * @Route("/post", name="post")
+     * @Route("/social/jquery/post", name="post")
      */
     public function index()
     {
@@ -57,4 +58,5 @@ class PostController extends AbstractController
             'message' => 'Vous aimez cette publication']
             , 200);
     }
+
 }
