@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Content;
-use App\Entity\ImgContent;
 use App\Entity\LikeContent;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,16 +12,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PostController extends AbstractController
 {
-    /**
-     * @Route("/social/jquery/post", name="post")
-     */
-    public function index()
-    {
-        return $this->render('post/index.html.twig', [
-            'controller_name' => 'PostController',
-        ]);
-    }
-
     /**
      * Gestion des likes (like / unlike)
      *

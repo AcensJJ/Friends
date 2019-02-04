@@ -38,13 +38,15 @@ class CivilityType extends AbstractType
                 'format' => 'yyyy-MM-dd',
                 'label' => 'Date de Naissance *'
             ])
-            ->add('description', TextareaType::class, array(
+            ->add('description', TextareaType::class, [
+                'required'   => false,
+                'empty_data' => '',
                 'label' => 'Description',
                 'attr' => array(
                     'placeholder' => 'Faites vous une description.',
                     'maxlength' => 999
                     )
-            ))
+            ])
             ->add('sexe', EntityType::class, [
                 // looks for choices from this entity
                 'class' => Sexe::class,

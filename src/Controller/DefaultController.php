@@ -2,9 +2,13 @@
 
 namespace App\Controller;
 
+use App\Form\PostType;
+use App\Entity\Content;
 use App\Entity\Civility;
-use App\Form\CivilityType;
 use App\Entity\DataUser;
+use App\Entity\ImgContent;
+use App\Form\CivilityType;
+use App\Form\ImgContentType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,7 +27,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/social", name="social")
      */
-    public function social(UserInterface $user, ObjectManager $manager)
+    public function social(UserInterface $user, ObjectManager $manager, Request $request)
     {   
         // Test si la civilité est config - Add in all controller fnct
         $civility = $user->getCivility();
@@ -31,9 +35,46 @@ class DefaultController extends AbstractController
         return $this->redirectToRoute('civility');
         }
 
-        $userPP=$user->getId();
+        // Publication
+        $post = new Content();    
+        $form = $this->createForm(PostType::class, $post);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // test si il y a au moins une valeur remplie (n'est pas vide)
+            dump($request);
+            $image = $request->files->get('post')['my_files'];
+            $text = $request->request->get('post')['text'];
+            if ($image != null OR $text != null) {
+                $post->setUser($user)
+                    ->setCreateAt(new \DateTime())
+                    ->setEnable('1');
+                
+                $manager->persist($post);
+                $manager->flush();
 
-      
+                // Les images
+
+                // upload
+                $files = $request->files->get('post')['my_files'];
+                foreach ($files as $file) {
+                    $upload_directory = $this->getParameter('upload_directory_post');
+                    $filename = md5(uniqid()) . '.' . $file->guessExtension();
+                    $file->move(
+                        $upload_directory,
+                        $filename
+                    );
+                    // associé l'image au post
+                    $images = new ImgContent(); 
+                    $images->setImg("assets/images/ressources/post/$filename")
+                        ->setContent($post);
+                    $manager->persist($images);
+                    $manager->flush();
+                }
+            }
+            
+        }
+
+        $userPP = $user->getId();
         if($userPP != NULL){
             $rawSql ="SELECT data_user.link , civility.first_name , civility.name , follow.follower_id  FROM  follow , data_user , civility where follow.following_id = :id and data_user.user_id = :id and civility.user_id = follow.follower_id  ";
             $stmt = $manager->getConnection()->prepare($rawSql);
@@ -54,6 +95,7 @@ class DefaultController extends AbstractController
         return $this->render('default/index.html.twig', [
             'controller_name' => 'Social',
             'followings' => $following ,
+            'form' => $form->createView(),
             'followers'=>$follower
         ]);
     }

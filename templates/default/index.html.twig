@@ -158,10 +158,18 @@ Nullam porttitor molestie convallis. In imperdiet purus libero, sed tempus liber
 			<div class="modal-header">
 			</div>
 			<div class="modal-body"s>
-				imperdiet purus libero, sed tempus libero euismod a. Nulla vulputate sem sed imperdiet iaculis. Quisque ultricies vulputate est fermentum bibendum. Nam tincidunt dapibus nulla et suscipit. Ut non sapien nec urna cursus tincidunt at a neque. Donec in bibendum lacus. Sed vel facilisis velit. Maecenas ut sem efficitur, euismod eros ac, pharetra ligula.
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary">Save changes</button>
+				<div class="box">
+					<div class="field">
+						{{ form_start(form, {'method': 'post', 'action': path('social'), 'attr': {'class': 'ui form'}}) }}
+						{{ form_widget(form) }}
+					</div>
+
+					<div class="ui checkbox">
+					</div>
+					<div> 
+						<input class="ui button" type="submit" id="_submit" value="Envoyer" />
+					</div>
+					{{ form_end(form) }}
 			</div>
 		</div>
 	</div>
