@@ -20,7 +20,7 @@ class PostType extends AbstractType
                 'empty_data' => '',
                 'label' => 'Titre',
                 'attr' => array(
-                    'class' => 'formType',
+                    // 'class' => 'TextType',
                     'placeholder' => 'Votre titre',
                     'maxlength' => 255
                 )
