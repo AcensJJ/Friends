@@ -4,10 +4,22 @@
 <link rel="stylesheet" href="{{ asset('assets/accueil/css/main.css') }}"/>
 {% endblock %}
 {% block body %}
+<div id="wrapper" style="background-color:white!important;">
 
-<section>
-    <h3>Résultat de la recherche : "{{ search }}" - {{ research | length }} resultat(s)</h3>
+				<!-- Menu -->
+					
 
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section>
+                         <article class="post">
+ 
+					<header>
+								
+     <div class="title"> <h3>Résultat de la recherche : "{{ search }}" - {{ research | length }} resultat(s)</h3>	</div>
+</header>
     <div class="row">
         {% for profil in research %}
         <div class="col-4 col-6-medium col-12-small">
@@ -26,9 +38,16 @@
                 </footer>
             </section>
         </div>
+         
+        
         {% endfor %}
     </div>
 </section>
+
+
+			</div>
+</article>
+
 </div>{% endblock %}
 {% block javascripts %}
 
