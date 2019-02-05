@@ -22,8 +22,7 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="single.html">Magna sed adipiscing</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+										<h2><a href="#">Titre</a></h2>
 									</div>
 									<div class="meta">
 										<time class="published" datetime="2015-11-01">November 1, 2015</time>
@@ -34,10 +33,9 @@
 								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 								<footer>
 									<ul class="actions">
-										<li><a href="single.html" class="button large">Continue Reading</a></li>
+										<li><a href="#" class="button large">Voir l'article</a></li>
 									</ul>
 									<ul class="stats">
-										<li><a href="#">General</a></li>
 										<li><a href="#" class="icon fa-heart">28</a></li>
 										<li><a href="#" class="icon fa-comment">128</a></li>
 									</ul>
@@ -61,8 +59,8 @@
 									<h2>{{ app.user.username }}</h2>
 									
 									<ul class="actions stacked">
-										<li><a data-toggle="modal" data-target="#exampleModal" class="button fit">Following : {{ app.user.followings | length }}</a></li>
-										<li><a href="#" data-toggle="modal" data-target="#exampleModal2" class="button fit">Followers : {{ app.user.followers | length }}</a></li>
+										<li><a data-toggle="modal" data-target="#exampleModal" class="button fit">Following : {{ app.user.followers | length }}</a></li>
+										<li><a href="#" data-toggle="modal" data-target="#exampleModal2" class="button fit">Followers : {{ app.user.followings | length }}</a></li>
 										<li><a href="#" data-toggle="modal" data-target="#publierModal" class="button fit">Publier</a></li>
 										<li><a href="{{ path('user_page_profil') }}" class="button fit" title="">Voir le profil</a></li>
 
