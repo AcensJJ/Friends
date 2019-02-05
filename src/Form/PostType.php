@@ -30,7 +30,7 @@ class PostType extends AbstractType
                 'empty_data' => '',
                 'label' => 'Description',
                 'attr' => array(
-                    'placeholder' => 'Description',
+                    'placeholder' => 'Mettez une description à votre publication',
                     'maxlength' => 999
                     )
             ])

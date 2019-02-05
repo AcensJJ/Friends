@@ -58,7 +58,7 @@
 							<section id="intro">
 								<a href="{{ path('user_page_profil') }}" class="logo"><img src="{{ app.user.dataUser.link }}" alt="" /></a>
 								<header>
-									<h2>{{ app.user.getUsername() }}</h2>
+									<h2>{{ app.user.username }}</h2>
 									
 									<ul class="actions stacked">
 										<li><a data-toggle="modal" data-target="#exampleModal" class="button fit">Following : {{ app.user.followings | length }}</a></li>
@@ -70,18 +70,14 @@
 								</header>
 							</section>
 
-					
-
-
 						<!-- About -->
 							<section class="blurb">
-								<h2>About</h2>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+								<h2>Votre description</h2>
+								<p>{{ app.user.civility.description }}</p>
 								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
+									<li><a href="{{ path('civility') }}" class="button">Modifier</a></li>
 								</ul>
 							</section>
-
 						<!-- Footer -->
 							<section id="footer">
 								<ul class="icons">
@@ -91,7 +87,7 @@
 									<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
 									<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
 								</ul>
-								<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+								<p class="copyright">&copy; Friends Corp.</p>
 							</section>
 
 					</section>
@@ -101,14 +97,12 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog" role="document" style="margin-top: 13%;">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal 1</h5>
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body"s>
+        <h5 class="modal-title" id="exampleModalLabel">Vos abonnements</h5>
+      </div>	
+      <div class="modal-body">
         {% for user in followings %}
 				<div class="request-details">
 					<div class="noty-user-img">
@@ -125,22 +119,20 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog" role="document"  style="margin-top: 13%;">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">MODAL 2</h5>
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title" id="exampleModalLabel">Vos abonnés</h5>
       </div>
-      <div class="modal-body"s>
-          {% for user in followers %}
+      <div class="modal-body">
+      	{% for user in followers %}
 				<div class="request-details">
 					<div class="noty-user-img">
 					<img src="/assets/{{user.link}}" alt=""></div>		  		
 					<div class="request-info"><h3>{{user.first_name}}  {{user.name}}</h3></div>  				
 					</div><!--request-detailse end-->
 				<!-- code here -->
-   				{% endfor %}
+   			{% endfor %}
       </div>
   
     </div>
@@ -151,11 +143,12 @@
 
  <!-- Modal -->
 <div class="modal fade" id="publierModal" tabindex="-1" role="dialog" aria-labelledby="publierModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
+	<div class="modal-dialog" role="document" style="margin-top: 7%;">
 		<div class="modal-content">
-			<div class="modal-header">
-			</div>
-			<div class="modal-body"s>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Créer une publication</h5>
+      </div>
+			<div class="modal-body" style="height: 100%;">
 				<div class="box">
 					<div class="field">
 						{{ form_start(form, {'method': 'post', 'action': path('social'), 'attr': {'class': 'ui form'}}) }}
