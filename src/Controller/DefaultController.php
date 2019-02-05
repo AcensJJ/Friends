@@ -33,6 +33,10 @@ class DefaultController extends AbstractController
         $civility = $user->getCivility();
         if($civility == null){
         return $this->redirectToRoute('civility');
+
+
+
+        
         }
 
         // Publication
