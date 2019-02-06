@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class PostType extends AbstractType
 {
@@ -40,7 +41,40 @@ class PostType extends AbstractType
                 'multiple'   => true,
                 'empty_data' => '',
                 'label' => 'Ajouter une/des image(s)',
+                'constraints' => [
+                    // new Assert\File([ 
+                    //     'mimeTypes' => [
+                    //         'application/png',
+                    //         'application/jpg',
+                    //     ],
+                    //     'mimeTypesMessage' => 'Seulement les images .jpg ou .png',
+                    //     ])
+                        //  ,
+                    // new Assert\Image([ 
+                    //     'minWidth' => 200,
+                    //     'maxWidth' => 600,
+                    //     'minHeight' => 200,
+                    //     'maxHeight' => 600,
+                    //     ])
+                    ],
+                // 
+                // 
                 ])
+                // ->add('my_files', new Assert\File([
+                //     // 'class' => 'FileType',
+                //     // 'required'   => false,
+                //     // 'mapped'   => false,
+                //     // 'multiple'   => true,
+                //     // // 'empty_data' => '',
+                //     // 'label' => 'Ajouter une/des image(s)',
+                //     'mimeTypes' => [
+                //         'application/png',
+                //             'application/jpg',
+                //     ],
+                //     'mimeTypesMessage' => 'Seulement les images .jpg ou .png',   
+                //     ]) 
+                //     )
+
         ;
     }
 

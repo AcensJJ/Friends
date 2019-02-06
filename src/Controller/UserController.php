@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/social/user/{id}", name="user_page")
+     * @Route("/social/user/page/{id}", name="user_page")
      */
     public function index(User $utilisateur, UserInterface $user, ObjectManager $manager)
     {   

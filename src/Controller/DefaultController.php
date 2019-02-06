@@ -84,7 +84,7 @@ class DefaultController extends AbstractController
             $stmt = $manager->getConnection()->prepare($rawSql);
             $stmt->bindValue('id', $userPP);
             $stmt->execute();
-            $following = $stmt->fetchAll();
+            $follower = $stmt->fetchAll();
         }
   
         if($userPP != NULL){
@@ -92,7 +92,7 @@ class DefaultController extends AbstractController
         $stmt = $manager->getConnection()->prepare($rawSql);
         $stmt->bindValue('id', $userPP);
         $stmt->execute();
-        $follower = $stmt->fetchAll();
+        $following = $stmt->fetchAll();
         }
            
 
