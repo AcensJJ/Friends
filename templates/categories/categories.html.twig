@@ -8,11 +8,10 @@
 {% block body %}
 
 	<section class="tiless"> 
-	
 		{% for categorie in categories %}
-		<article class="style{{i}}">						
+		<article class="style{{i}}" style="width: {{size[a]}}px;">						
 			<span class="image">
-				<img style="height: 300px; width: 475px;" src="{{ asset(categorie.image) }}" alt="" />
+				<img style="height: 300px; width: {{size[a]}}px;" src="{{ asset(categorie.image) }}" alt="" />
 			</span>
 			<a href="{{ path('souscategories',{"id":categorie.id})}}">
 				<h2>{{ categorie.name }}</h2>
@@ -21,10 +20,17 @@
 				</div>
 			</a>
 		</article>
+		{# boucle i -> 1 à 6 #}
 		{% set i = i + 1 %}
 		{% if i > 6 %}
 		{% set i = 1 %}
 		{% endif %}
+		{# boucle a -> 1 à 6 #}
+		{% set a = a + 1 %}
+		{% if a > 9 %}
+		{% set a = 1 %}
+		{% endif %}
+
 		{% endfor %}			
 	</section>
 {% endblock %}

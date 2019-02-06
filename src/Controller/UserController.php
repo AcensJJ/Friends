@@ -26,7 +26,7 @@ class UserController extends AbstractController
 
         return $this->render('user/user.html.twig', [
             'controller_name' => 'Page de profil de',
-            'utilisateur' => $utilisateur
+            'utilisateur' => $utilisateur,
         ]);
     }
 
@@ -42,7 +42,7 @@ class UserController extends AbstractController
         }
 
         return $this->render('user/profil.html.twig', [
-            'controller_name' => 'Votre page de profil'
+            'controller_name' => 'Votre page de profil',
         ]);
     }
 

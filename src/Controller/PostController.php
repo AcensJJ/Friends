@@ -32,7 +32,7 @@ class PostController extends AbstractController
 
             return $this->json([
                 'code' => 200, 
-                'message' => 'Vous n\'aimez plus cette publication'
+                'message' => 'Vous n\'aimez plus cette publication',
                 ], 200);
         }
         
@@ -45,7 +45,8 @@ class PostController extends AbstractController
         $manager->flush();
         return $this->json([
             'code' => 200, 
-            'message' => 'Vous aimez cette publication']
+            'message' => 'Vous aimez cette publication',
+            ]
             , 200);
     }
 

@@ -32,11 +32,7 @@ class DefaultController extends AbstractController
         // Test si la civilité est config - Add in all controller fnct
         $civility = $user->getCivility();
         if($civility == null){
-        return $this->redirectToRoute('civility');
-
-
-
-        
+        return $this->redirectToRoute('civility');        
         }
 
         // Publication
@@ -100,7 +96,7 @@ class DefaultController extends AbstractController
             'controller_name' => 'Social',
             'followings' => $following ,
             'form' => $form->createView(),
-            'followers'=>$follower
+            'followers'=>$follower,
         ]);
     }
 
@@ -140,7 +136,7 @@ class DefaultController extends AbstractController
 
         return $this->render('default/civility.html.twig', [
             'controller_name' => 'Civilité',
-            'form' => $form->createView()
+            'form' => $form->createView(),
         ]);
     }
 
@@ -156,7 +152,7 @@ class DefaultController extends AbstractController
         }
         
         return $this->render('default/conditions.html.twig', [
-            'controller_name' => 'Conditions'
+            'controller_name' => 'Conditions',
         ]);
     }
 
