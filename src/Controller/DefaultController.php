@@ -105,18 +105,6 @@ class DefaultController extends AbstractController
      */
     public function civility(UserInterface $user, ObjectManager $manager, Request $request)
     {
-        // ajouter les photos de profil de base et background
-        $userPP = $user->getDataUser();
-        if($userPP == null){
-            $userPP = new DataUser;
-            $userPP->setLink("assets/images/resources/pf-img4.jpg")
-                   ->setBgLink("assets/images/resources/cover-img.jpg")
-                   ->setUser($user);
-            $manager->persist($userPP);
-            $manager->flush();
-            return $this->redirectToRoute('civility');
-        }
-
         // form
         // voir si l' entité existe
         $civil = $user->getCivility();
@@ -127,6 +115,16 @@ class DefaultController extends AbstractController
         $form = $this->createForm(CivilityType::class, $civil);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            // ajouter les photos de profil de base et background
+            $userPP = $user->getDataUser();
+            if($userPP == null){
+                $userPP = new DataUser;
+                $userPP->setLink("assets/images/resources/pf-img4.jpg")
+                        ->setBgLink("assets/images/resources/cover-img.jpg")
+                        ->setUser($user);
+                $manager->persist($userPP);
+                $manager->flush();
+            }
             $civil->setUser($user);
             $manager->persist($civil);
             $manager->flush();
@@ -143,7 +141,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/social/Conditions", name="conditions")
      */
-    public function conditions()
+    public function conditions(UserInterFace $user)
     {
         // Test si la civilité est config - Add in all controller fnct
         $civility = $user->getCivility();

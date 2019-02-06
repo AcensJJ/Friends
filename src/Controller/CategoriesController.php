@@ -19,8 +19,13 @@ class CategoriesController extends AbstractController
     /**
      * @Route("/social/categories", name="categories")
      */
-    public function categories(ObjectManager $manager , Request $request)
+    public function categories(ObjectManager $manager , Request $request, UserInterFace $user)
     {
+        // Test si la civilité est config - Add in all controller fnct
+        $civility = $user->getCivility();
+        if($civility == null){
+        return $this->redirectToRoute('civility');
+        }
 
         $repo = $this->getDoctrine()->getRepository(Category::class);
         $categories = $repo->findAll();
@@ -44,6 +49,12 @@ class CategoriesController extends AbstractController
      */
     public function souscategories($id = null ,ObjectManager $manager , Request $request, UserInterface $user, ActivityRepository $repo)
     {  
+        // Test si la civilité est config - Add in all controller fnct
+        $civility = $user->getCivility();
+        if($civility == null){
+        return $this->redirectToRoute('civility');
+        }
+
         $activity = $repo->findBy(array('category' => $id), array('name' => 'ASC'));
 
         return $this->render('categories/activity.html.twig', [
