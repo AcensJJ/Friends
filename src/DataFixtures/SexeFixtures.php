@@ -18,6 +18,14 @@ class SexeFixtures extends Fixture
         $femme->setName('Femme');
         $manager->persist($femme);
 
+        $autre = new Sexe();
+        $autre->setName('Autre');
+        $manager->persist($autre);
+
+        $non = new Sexe();
+        $non->setName('Je ne souhaite pas le dire');
+        $manager->persist($non);
+
         $manager->flush();
 
         // reference pour acceder avec une autre fixture

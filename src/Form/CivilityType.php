@@ -20,7 +20,7 @@ class CivilityType extends AbstractType
             ->add('name', TextType::class, array(
                 'label' => 'Nom *',
                 'attr' => array(
-                    'class' => 'formType',
+                    // 'class' => 'formType',
                     'placeholder' => 'Votre nom',
                     'maxlength' => 47
                     )

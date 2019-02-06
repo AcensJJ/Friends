@@ -60,6 +60,21 @@ class PostType extends AbstractType
                 // 
                 // 
                 ])
+                // ->add('my_files', new Assert\File([
+                //     // 'class' => 'FileType',
+                //     // 'required'   => false,
+                //     // 'mapped'   => false,
+                //     // 'multiple'   => true,
+                //     // // 'empty_data' => '',
+                //     // 'label' => 'Ajouter une/des image(s)',
+                //     'mimeTypes' => [
+                //         'application/png',
+                //             'application/jpg',
+                //     ],
+                //     'mimeTypesMessage' => 'Seulement les images .jpg ou .png',   
+                //     ]) 
+                //     )
+
         ;
     }
 

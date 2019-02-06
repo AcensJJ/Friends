@@ -38,7 +38,8 @@ class PostController extends AbstractController
         
         $LikeContent = new LikeContent();
         $LikeContent->setContent($post)
-              ->setUser($user);
+              ->setUser($user)
+              ->setCreateAt(new \DateTime());
         
         $manager->persist($LikeContent);
         $manager->flush();
