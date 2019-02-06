@@ -3,12 +3,12 @@ https://www.canva.com/colors/combinations/tent-light-reflection/?fbclid=IwAR0fkX
 
 noir -> bordeau -> rouge -> vert -> kaky ->  celadon -> cream -> marron claire -> cognac
 
-1:071E22
-2:970C10
-3:FE2E2E
-4:1D7874
-5:679289
-6:A1AFA0
-7:F7EDD0
-8:D6C08B
-9:947360
+1: 071E22
+2: 970C10
+3: FE2E2E
+4: 1D7874
+5: 679289
+6: A1AFA0
+7: F7EDD0
+8: D6C08B
+9: 947360
