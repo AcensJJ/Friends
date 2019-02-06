@@ -105,7 +105,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/social/civilité", name="civility")
+     * @Route("/social/civilite", name="civility")
      */
     public function civility(UserInterface $user, ObjectManager $manager, Request $request)
     {
