@@ -1,40 +1,39 @@
 {% extends 'base.html.twig' %}
+	{% block stylesheets %}
+		<link rel="stylesheet" href="{{ asset('assets/accueil/css/main.css') }}" />
+		<style>
+	#civility_birth{
+		background:rgba(160, 160, 160, 0.075);
+	}
 
-{% block title %}Name - {{ controller_name }}{% endblock %}
+	input{
+		margin-bottom: 2%;
+	}
 
+		</style>
+		 {% endblock %}
 {% block body %} 
-	<main>
-		<div class="main-section">
-			<div class="container">
-				<div class="main-section-data">
-					<div class="row">
-                        <!-- BT grille -->
-						<div class="col-lg-3 col-md-4 pd-left-none no-pd">
-							<div class="main-left-sidebar no-margin"></div>
-						</div>
-                        <!-- affichage form -->
-						<div class="col-lg-6 col-md-8 no-pd">
-							<div class="main-ws-sec">
-								<div class="post-topbar">
-									 <div class="field">
-                                        {{ form_start(form, {'method': 'post', 'action': path('civility'), 'attr': {'class': 'ui form'}}) }}
-                                        {{ form_widget(form) }}
-                                    </div>
-
-                                    <div class="ui checkbox">
-                                    </div>
-                                    <div> 
+</div>
+<div  style="background-color:white; margin-left:25%; margin-right:25%; padding-top:-5%; padding-bottom:-150px;">
+<div style="margin:auto; left:50%; right:50%; width:500px;margin-top:-5%;padding-top:6%;">
+	<h3>Modification profil </h3>
+			  {{ form_start(form, {'method': 'post', 'action': path('civility'), 'attr': {'class': 'ui form'}}) }}
+			{{ form_widget(form) }}
+</br>
                                         <input class="ui button" type="submit" id="_submit" value="Envoyer" />
-                                    </div>
                                     
                                     {{ form_end(form) }}
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> 
-		</div>
-	</main>
-</div><!--theme-layout end-->
+
+				</br>
+		
+
+			
+	</div>
+	</div>
+			
 {% endblock %}
+
+
+
+
+  
