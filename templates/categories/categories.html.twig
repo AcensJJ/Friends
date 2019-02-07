@@ -3,17 +3,22 @@
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('assets/accueil/css/main.css') }}" />
+	<style>
+	.box-img-affiche{
+	height: 360px;
+	}
+	</style>
 {% endblock %}
 
 {% block body %}
 
 	<section class="tiless"> 
 		{% for categorie in categories %}
-		<article class="style{{i}}" style="width: {{size[a]}}px; height: 360px;">						
+		<article style="width: {{size[a]}}px;" class="style{{i}} box-img-affiche">						
 			<span class="image">
-				<img style="height: 300px; width: {{size[a]}}px; height: 360px;" src="{{ asset(categorie.image) }}" alt="" />
+				<img style="width: {{size[a]}}px;" class="box-img-affiche"  src="{{ asset(categorie.image) }}" alt="" />
 			</span>
-			<a href="{{ path('souscategories',{"id":categorie.id})}}">
+			<a class="a-pourtel"  href="{{ path('souscategories',{"id":categorie.id})}}">
 				<h2 style="color: white;">{{ categorie.name }}</h2>
 				<div class="content">
 					<p>Voir cette catégorie !</p>
