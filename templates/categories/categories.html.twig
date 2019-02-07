@@ -14,9 +14,9 @@
 
 	<section class="tiless"> 
 		{% for categorie in categories %}
-		<article style="width: {{size[a]}}px;" class="style{{i}} box-img-affiche">						
+		<article style="width: {{size[a]}}%;" class="style{{i}} box-img-affiche">						
 			<span class="image">
-				<img style="width: {{size[a]}}px;" class="box-img-affiche"  src="{{ asset(categorie.image) }}" alt="" />
+				<img style="width: 100%;" class="box-img-affiche"  src="{{ asset(categorie.image) }}" alt="" />
 			</span>
 			<a class="a-pourtel"  href="{{ path('souscategories',{"id":categorie.id})}}">
 				<h2 style="color: white;">{{ categorie.name }}</h2>
