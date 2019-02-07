@@ -4,27 +4,45 @@
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('assets/accueil/css/main.css') }}" />
 	<style>
-	.box-img-affiche{
-	height: 360px;
+	.box-size{
+		height: 360px;
+	}
+	article.box-size{
+		margin-left: 20px;
+		margin-top: 20px;
+	}
+	.h2-text-cate{
+		color: white;
+	}
+
+	.box-affiche{
+
+	}
+	.cate-h3{
+		width: 100%;
+	}
+	@media only screen and (max-device-width : 1200px) {
+	/* Styles */
 	}
 	</style>
 {% endblock %}
 
 {% block body %}
-
 	<section class="tiless"> 
-		{% for categorie in categories %}
-		<article style="width: {{size[a]}}%;" class="style{{i}} box-img-affiche">						
-			<span class="image">
-				<img style="width: 100%;" class="box-img-affiche"  src="{{ asset(categorie.image) }}" alt="" />
-			</span>
-			<a class="a-pourtel"  href="{{ path('souscategories',{"id":categorie.id})}}">
-				<h2 style="color: white;">{{ categorie.name }}</h2>
-				<div class="content">
-					<p>Voir cette catégorie !</p>
-				</div>
-			</a>
-		</article>
+
+
+			{% for categorie in categories %}
+			<article style="width: {{size[a]}}%;" class="style{{i}} box-affiche{{i}} box-size">						
+				<span class="image">
+					<img class="box-size" style="width: 100%;" src="{{ asset(categorie.image) }}" alt="" />
+				</span>
+				<a class="a-pourtel"  href="{{ path('souscategories',{"id":categorie.id})}}">
+					<h2 class="h2-text-cate">{{ categorie.name }}</h2>
+					<div class="content">
+						<p>Voir cette catégorie !</p>
+					</div>
+				</a>
+			</article>
 		{# boucle i -> 1 à 6 #}
 		{% set i = i + 1 %}
 		{% if i > 6 %}
