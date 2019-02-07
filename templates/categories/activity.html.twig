@@ -25,6 +25,8 @@
 	.title{	
 		padding-bottom: 5%;
 		height: 50px;
+		padding-left: 1.125%;
+		width: 99.1%;
 	}
 	.colorText{
 		padding-left: 25px;
@@ -36,6 +38,9 @@
 	}
 	.colorText:hover{ 
  	border:1px solid #fe2e2e;
+	}
+	.row{
+		margin: 0;
 	}
 	</style>
 {% endblock %}
@@ -58,7 +63,7 @@
 			{% set data = "Ajouter la catégorie" %}
 			{% endif %}
 
-			<div class="col-4 col-6-medium col-12-small">
+			<div class="col-4 col-6-medium col-12-small box-resized">
 				<section class="box">
 					<img style="height: 350px; width: 100%;" src="{{ asset(act.img) }}" alt="" />
 						

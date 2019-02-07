@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Friends</title>
+        <title>So-SyA</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
@@ -13,24 +13,23 @@
         {# main style #}
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/main/style.css')}}">
         {# template #}
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/cssregisterlog/responsive.css')}}">
 
         {% block stylesheets %}
         {% endblock %}
     </head>
-    {% if app.user != null %}
     <body class="is-preload"> <!-- Wrapper -->
         <div id="wrapper">
             <!-- Header -->
             <header id="header">
                 <h1>
-                    <a href="{{ path('social') }}">Friends</a>
+                    <a href="{{ path('social') }}">So-SyA</a>
                 </h1>
                 <nav class="links">
                     <ul>
+                        <li><a href="{{ path('social') }}">Accueil</a></li>
                         <li><a href="{{ path('user_page_profil') }}">Mon profil</a></li>
                         <li><a href="{{ path('categories') }}">Catégories</a></li>
-                        <li><a href="{{ path('social') }}">Notification</a></li>
                         {# <li><a href="#" data-toggle="modal" data-target="#exampleModal">Publier</a></li> #}
                     </ul>
                 </nav>
@@ -49,8 +48,7 @@
                 </nav>
             </header>
             <!-- Menu -->
-            <section
-                id="menu">
+            <section id="menu">
                 <!-- Search -->
                 <section>
                     <form action="#" class="search" method="get">
@@ -61,9 +59,15 @@
                 <section>
                     <ul class="links">
                         <li>
-                            <a href="{{ path('user_page_profil') }}">
-                                <h3>Votre profil</h3>
-                                <p>Voir votre page de profil</p>
+                            <a href="{{ path('social') }}">
+                                <h3>Social</h3>
+                                <p>Retourner à la page principale</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('civility') }}">
+                                <h3>Catégorie</h3>
+                                <p>Voir les différents loisirs</p>
                             </a>
                         </li>
                         <li>
@@ -95,7 +99,6 @@
                     </ul>
                 </section>
             </section>
-            {% endif %}
             <body>
                 {% block body %}{% endblock %}
             </body>
