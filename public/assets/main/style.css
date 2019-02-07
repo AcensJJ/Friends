@@ -1,9 +1,23 @@
 .modal-body{
-
 	height:350px;
 	overflow:hidden;
-
 }
-.modal-body:hover{overflow-y:auto;}
+.modal-body:hover{
+	overflow-y:auto;
+}
 
-
+.h3-hover{ 
+	background-color: #D6C08B;
+	text-align: center;
+	font-size: 25px;
+}
+.remove{
+	background-color: #e4ffe2;
+}
+.add{
+	background-color: #fafafa;
+}
+.content-aj{
+	padding: 7%;
+	padding-top: 2%;
+}

@@ -19,12 +19,15 @@ class CategoriesController extends AbstractController
     /**
      * @Route("/social/categories", name="categories")
      */
-    public function categories(ObjectManager $manager , Request $request, UserInterFace $user)
+    public function categories(ObjectManager $manager , Request $request, UserInterFace $user = null)
     {
-        // Test si la civilité est config - Add in all controller fnct
-        $civility = $user->getCivility();
-        if($civility == null){
-        return $this->redirectToRoute('civility');
+        // user connecter alors verifier si il a config
+        if($user != null) {
+            // Test si la civilité est config - Add in all controller fnct
+            $civility = $user->getCivility();
+            if($civility == null){
+            return $this->redirectToRoute('civility');
+            }
         }
 
         $repo = $this->getDoctrine()->getRepository(Category::class);
@@ -32,8 +35,8 @@ class CategoriesController extends AbstractController
         // couleur random
         $i = random_int(1, 6);
         // taille des div
-        $size = array('1' => '60','2' => '34','3' => '47','4' => '47','5' => '47','6' => '47','7' => '47','8' => '47','9' => '47','10' => '47');
-
+        $size = array('1' => '54','2' => '40','3' => '37','4' => '20','5' => '34','6' => '47','7' => '47','8' => '30','9' => '31','10' => '30');
+        
         return $this->render('categories/categories.html.twig', [
             'controller_name' => 'Categories',
             'categories' => $categories,
@@ -47,12 +50,15 @@ class CategoriesController extends AbstractController
     /**
      * @Route("/social/categories/{id}", name="souscategories")
      */
-    public function souscategories($id = null ,ObjectManager $manager , Request $request, UserInterface $user, ActivityRepository $repo)
+    public function souscategories($id = null ,ObjectManager $manager , Request $request, UserInterface $user = null, ActivityRepository $repo)
     {  
-        // Test si la civilité est config - Add in all controller fnct
-        $civility = $user->getCivility();
-        if($civility == null){
-        return $this->redirectToRoute('civility');
+        // user connecter alors verifier si il a config
+        if($user != null) {
+            // Test si la civilité est config - Add in all controller fnct
+            $civility = $user->getCivility();
+            if($civility == null){
+            return $this->redirectToRoute('civility');
+            }
         }
 
         $activity = $repo->findBy(array('category' => $id), array('name' => 'ASC'));

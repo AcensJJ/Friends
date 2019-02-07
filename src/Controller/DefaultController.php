@@ -19,13 +19,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
-     */
-    public function index(UserInterface $user = null)
-    { 
-        return $this->redirectToRoute('social');
-    }
-    /**
      * @Route("/social", name="social")
      */
     public function social(UserInterface $user, ObjectManager $manager, Request $request)
