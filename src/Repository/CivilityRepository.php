@@ -19,6 +19,14 @@ class CivilityRepository extends ServiceEntityRepository
         parent::__construct($registry, Civility::class);
     }
 
+    public function findByWord($keyword){
+        $query = $this->createQueryBuilder('c')
+            ->where('c.name LIKE :key')->orWhere('c.firstName LIKE :key')
+            ->setParameter('key' , $keyword.'%')->getQuery();
+ 
+        return $query->getResult();
+    }
+    
     // /**
     //  * @return Civility[] Returns an array of Civility objects
     //  */

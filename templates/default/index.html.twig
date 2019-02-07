@@ -82,8 +82,6 @@
 									<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
 									<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-									<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
 								</ul>
 								<p class="copyright">&copy; Friends Corp.</p>
 							</section>
@@ -101,14 +99,15 @@
         <h5 class="modal-title" id="exampleModalLabel">Vos abonnements</h5>
       </div>	
       <div class="modal-body">
-        {% for user in followings %}
+        {% for follow in followings %}
 				<div class="request-details">
 					<div class="noty-user-img">
-					<img src="/assets/{{user.link}}" alt=""></div>		  		
-					<div class="request-info"><h3>{{user.first_name}}  {{user.name}}</h3></div>  				
-					</div><!--request-detailse end-->
+						<img src="{{ asset(follow.following.dataUser.link) }}" alt="">
+					</div>		  		
+					<div class="request-info"><h3>{{follow.following.civility.firstName}}  {{follow.following.civility.name}}</h3></div>  				
+				</div><!--request-detailse end-->
 				<!-- code here -->
-   				{% endfor %}
+   			{% endfor %}
       </div>
     
     </div>
@@ -123,12 +122,13 @@
         <h5 class="modal-title" id="exampleModalLabel">Vos abonnés</h5>
       </div>
       <div class="modal-body">
-      	{% for user in followers %}
+      	{% for follow in followers %}
 				<div class="request-details">
 					<div class="noty-user-img">
-					<img src="/assets/{{user.link}}" alt=""></div>		  		
-					<div class="request-info"><h3>{{user.first_name}}  {{user.name}}</h3></div>  				
-					</div><!--request-detailse end-->
+						<img src="{{ asset(follow.follower.dataUser.link) }}" alt="">
+					</div>		  		
+					<div class="request-info"><h3>{{follow.follower.civility.firstName}}  {{follow.follower.civility.name}}</h3></div>  				
+				</div><!--request-detailse end-->
 				<!-- code here -->
    			{% endfor %}
       </div>

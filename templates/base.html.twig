@@ -6,13 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
+        <link rel="icon" type="image/png" href="{{ asset('assets/images/logo.png') }}" />
         {% block stylesheets_before %}{% endblock %}
+        {# bootstrap #}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        {# Hover Master #}
+		<link href="{{ asset('assets/hoverMaster/css/hover.css')}}" rel="stylesheet" media="all">
         {# main style #}
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/main/style.css')}}">
         {# template #}
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css')}}">
-
 
         {% block stylesheets %}
         {% endblock %}
@@ -38,7 +41,7 @@
                     <ul>
                         <li class="search">
                             <a class="fa-search" href="#search">Search</a>
-                            <form id="search" method="get" action="{{ path('search') }}">
+                            <form id="search" method="get" style="color: #E1E1E1;" action="{{ path('search') }}">
                                 <input name="word" placeholder="Search" type="text"/>
                             </form>
                         </li>
@@ -54,7 +57,7 @@
                 <!-- Search -->
                 <section>
                     <form action="#" class="search" method="get">
-                        <input name="query" placeholder="Search" type="text"/>
+                        <input style="color: #E1E1E1;" name="query" placeholder="Search" type="text"/>
                     </form>
                 </section>
                 <!-- Links -->

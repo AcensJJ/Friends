@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Follow;
 use App\Form\PostType;
 use App\Entity\Content;
 use App\Entity\Civility;
@@ -32,7 +33,7 @@ class DefaultController extends AbstractController
         // Test si la civilité est config - Add in all controller fnct
         $civility = $user->getCivility();
         if($civility == null){
-        return $this->redirectToRoute('civility');        
+            return $this->redirectToRoute('civility');        
         }
 
         // Publication
@@ -73,24 +74,9 @@ class DefaultController extends AbstractController
             }
             
         }
-
-        $userPP = $user->getId();
-        if($userPP != NULL){
-            $rawSql ="SELECT data_user.link , civility.first_name , civility.name , follow.follower_id  FROM  follow , data_user , civility where follow.following_id = :id and data_user.user_id = :id and civility.user_id = follow.follower_id  ";
-            $stmt = $manager->getConnection()->prepare($rawSql);
-            $stmt->bindValue('id', $userPP);
-            $stmt->execute();
-            $follower = $stmt->fetchAll();
-        }
-  
-        if($userPP != NULL){
-        $rawSql ="SELECT data_user.link , civility.first_name , civility.name , follow.following_id  FROM  follow , data_user , civility where follow.follower_id = :id and data_user.user_id = :id and civility.user_id = follow.following_id ";
-        $stmt = $manager->getConnection()->prepare($rawSql);
-        $stmt->bindValue('id', $userPP);
-        $stmt->execute();
-        $following = $stmt->fetchAll();
-        }
            
+        $following = $user->getFollowers();
+        $follower = $user->getFollowings();
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'Social',
@@ -116,6 +102,7 @@ class DefaultController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // ajouter les photos de profil de base et background
+                // fait quand le form est rempli pour obliger l'utilisateur a rentré son nom
             $userPP = $user->getDataUser();
             if($userPP == null){
                 $userPP = new DataUser;
@@ -146,7 +133,7 @@ class DefaultController extends AbstractController
         // Test si la civilité est config - Add in all controller fnct
         $civility = $user->getCivility();
         if($civility == null){
-        return $this->redirectToRoute('civility');
+            return $this->redirectToRoute('civility');
         }
         
         return $this->render('default/conditions.html.twig', [

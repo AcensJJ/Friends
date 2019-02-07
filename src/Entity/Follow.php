@@ -32,7 +32,7 @@ class Follow
     }
 
     public function __toString() {
-        return (string) "utilisateur";
+        return (string) "abonnement";
     }
 
     public function getFollower(): ?User

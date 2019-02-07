@@ -2,13 +2,12 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\ActivityRepository;
 use App\Entity\Civility;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SearchbarController extends AbstractController
 {
@@ -23,17 +22,15 @@ class SearchbarController extends AbstractController
         return $this->redirectToRoute('civility');
         }
         
-        $search = $request->query->get('word');
-        $req = " '$search%'  ";
-        $rawSql ="SELECT DISTINCT name ,first_name ,link FROM civility , data_user  WHERE  data_user.id = civility.id AND name like " .$req. " or first_name like " .$req. " order by name asc ";   
-        $stmt = $manager->getConnection()->prepare($rawSql);
-        $stmt->execute();
-        $research = $stmt->fetchAll();
+        $keyword = $request->query->get('word');
+ 
+        $research = $this->getDoctrine()->getRepository(Civility::class)
+            ->findByWord($keyword);
 
         return $this->render('searchbar/index.html.twig', [
             'controller_name' => 'search',
+            'key' => $keyword,
             'research' => $research,
-            'search' => $search,
             'request' => $request,
         ]);
     }
