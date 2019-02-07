@@ -32,7 +32,7 @@ class CategoriesController extends AbstractController
         // couleur random
         $i = random_int(1, 6);
         // taille des div
-        $size = array('1' => '800','2' => '500','3' => '280','4' => '660','5' => '320','6' => '420','7' => '420','8' => '420','9' => '650','9' => '650');
+        $size = array('1' => '760','2' => '540','3' => '560','4' => '260','5' => '440','6' => '650','7' => '650','8' => '420','9' => '420','9' => '420');
 
         return $this->render('categories/categories.html.twig', [
             'controller_name' => 'Categories',
