@@ -2,60 +2,32 @@
 {% extends 'base.html.Twig' %}
 
 {% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/multiverse/css/main.css') }}" />
 	<link rel="stylesheet" href="{{ asset('assets/nav/css/main.css') }}" />
 	<style>
-	.box-size{
-		height: 360px;
-	}
-	article.box-size{
-		margin-left: 20px;
-		margin-top: 20px;
-	}
-	.h2-text-cate{
-		color: white;
-	}
-
-	.box-affiche{
-
-	}
-	.cate-h3{
+	.img-resize{
 		width: 100%;
 	}
-	@media only screen and (max-device-width : 1200px) {
-	/* Styles */
+	#wrapper{
+		margin: 0;
+		padding: 0;
+		width: 100%;
 	}
 	</style>
 {% endblock %}
 
 {% block body %}
-	<section class="tiless"> 
 
-
-			{% for categorie in categories %}
-			<article style="width: {{size[a]}}%;" class="style{{i}} box-affiche{{i}} box-size">						
-				<span class="image">
-					<img class="box-size" style="width: 100%;" src="{{ asset(categorie.image) }}" alt="" />
-				</span>
-				<a class="a-pourtel"  href="{{ path('souscategories',{"id":categorie.id})}}">
-					<h2 class="h2-text-cate">{{ categorie.name }}</h2>
-					<div class="content">
-						<p>Voir cette catégorie !</p>
-					</div>
-				</a>
-			</article>
-		{# boucle i -> 1 à 6 #}
-		{% set i = i + 1 %}
-		{% if i > 6 %}
-		{% set i = 1 %}
-		{% endif %}
-		{# boucle a -> 1 à 10 #}
-		{% set a = a + 1 %}
-		{% if a > 10 %}
-		{% set a = 1 %}
-		{% endif %}
-
-		{% endfor %}			
-	</section>
+	<div id="main">
+	{% for categorie in categories %}
+		<article class="thumb">
+			<a class="image effet-zoom" href="{{ path('souscategories',{"id":categorie.id})}}">
+				<img class="img-resize" src="{{ asset(categorie.image) }}" alt="" />
+			</a>
+		</article>
+	
+	{% endfor %}
+</div>
 {% endblock %}
 {% block javascripts %}
 

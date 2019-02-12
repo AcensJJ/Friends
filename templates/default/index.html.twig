@@ -1,6 +1,7 @@
 {% extends 'base.html.Twig' %}
 	{% block stylesheets %}
 	{# bootstrap #}
+		<link rel="stylesheet" href="{{ asset('assets/strata/css/main.css') }}" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="{{ asset('assets/nav/css/main.css') }}" />
 		   
@@ -10,87 +11,60 @@
 	height:350px;
 	overflow:hidden;
 }
-.modal-body:hover{overflow-y:auto;}
+.modal-body:hover{
+	overflow-y:auto;
+}
+a.button.fit{
+	width: auto;
+	margin-right: 2.190875%;
+	margin-left: 2.190875%;
+	text-decoration: none;
+	background-color: #fafafa;
+	box-shadow: inset 0 0 0 1px #777777;
+}
+a.button.fit:hover{
+	width: auto;
+	margin-right: 2.190875%;
+	margin-left: 2.190875%;
+	text-decoration: none;
+	background-color: #fafafa;
+	box-shadow: inset 0 0 0 1px #fe2e2e;
+}
 
 </style>
 		 {% endblock %}
 		 {% block body %}
-		<!-- Wrapper -->
-				<!-- Main -->
-					<div id="main">
-						<!-- Post -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="#">Titre</a></h2>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="" alt="" /></a>
-									</div>
-								</header>
-								<a href="single.html" class="image featured"><img src="" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="#" class="button large">Voir l'article</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-							</article>
-						<!-- Pagination -->
-							<ul class="actions pagination">
-								<li><a href="" class="disabled button large previous">Previous Page</a></li>
-								<li><a href="#" class="button large next">Next Page</a></li>
-							</ul>
+		 <div id="main">
+				<section id="two">
+						<a data-toggle="modal" data-target="#exampleModal" class="button fit">Following : {{ app.user.followers | length }}</a>
+						<a data-toggle="modal" data-target="#exampleModal2" class="button fit">Followers : {{ app.user.followings | length }}</a>
+						<a data-toggle="modal" data-target="#publierModal" class="button fit">Publier</a>
+						<a href="{{ path('user_page_profil') }}" class="button fit">Voir votre profil</a>
 
-					</div>
+				</section>
+				<section id="tree">
+					post
+				</section>
 
-				<!-- Sidebar -->
-					<section id="sidebar">
-
-						<!-- Intro -->
-							<section id="intro">
-								<a href="{{ path('user_page_profil') }}" class="logo"><img src="{{ app.user.dataUser.link }}" alt="" /></a>
-								<header>
-									<h2>{{ app.user.username }}</h2>
-									
-									<ul class="actions stacked">
-										<li><a data-toggle="modal" data-target="#exampleModal" class="button fit">Following : {{ app.user.followers | length }}</a></li>
-										<li><a href="#" data-toggle="modal" data-target="#exampleModal2" class="button fit">Followers : {{ app.user.followings | length }}</a></li>
-										<li><a href="#" data-toggle="modal" data-target="#publierModal" class="button fit">Publier</a></li>
-										<li><a href="{{ path('user_page_profil') }}" class="button fit" title="">Voir votre profil</a></li>
-
-									</ul>
-								</header>
-							</section>
-
-						<!-- About -->
-							<section class="blurb">
-								<h2>Votre description</h2>
-								<p>{{ app.user.civility.description }}</p>
-								<ul class="actions">
-									<li><a href="{{ path('civility') }}" class="button">Modifier</a></li>
-								</ul>
-							</section>
-						<!-- Footer -->
-							<section id="footer">
-								<ul class="icons">
-									<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-								</ul>
-								<p class="copyright">&copy; So-Sya Corp.</p>
-							</section>
-
-					</section>
 
 			</div>
 
+		<!-- Footer -->
+			<footer id="footer">
+				{# <div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Insta</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; So-SyA</li>
+					</ul>
+				</div>
+			</footer> #}
 
+
+</div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document" style="margin-top: 13%;">
@@ -102,9 +76,9 @@
         {% for follow in followings %}
 				<div class="request-details">
 					<div class="noty-user-img">
-						<img src="{{ asset(follow.following.dataUser.link) }}" alt="">
+						<img style="width: 100px; height: 100px;" src="{{ asset(follow.following.dataUser.link) }}" alt="">
 					</div>		  		
-					<div class="request-info"><h3>{{follow.following.civility.firstName}}  {{follow.following.civility.name}}</h3></div>  				
+					<div class="request-info"><p>{{follow.following.civility.firstName}}  {{follow.following.civility.name}}</p></div>  				
 				</div><!--request-detailse end-->
 				<!-- code here -->
    			{% endfor %}
@@ -137,8 +111,6 @@
   </div>
 </div>
 
-</div>
-
  <!-- Modal -->
 <div class="modal fade" id="publierModal" tabindex="-1" role="dialog" aria-labelledby="publierModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document" style="margin-top: 7%;">
@@ -164,6 +136,7 @@
 	</div>
 </div>
 {% endblock %}
+
 {% block javascripts %}
 
 {% endblock %}

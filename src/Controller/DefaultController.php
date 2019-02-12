@@ -10,6 +10,7 @@ use App\Entity\DataUser;
 use App\Entity\ImgContent;
 use App\Form\CivilityType;
 use App\Form\ImgContentType;
+use App\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
@@ -71,11 +72,21 @@ class DefaultController extends AbstractController
         $following = $user->getFollowers();
         $follower = $user->getFollowings();
 
+        $i = 0;
+        foreach ($following as $follow) {
+            $followingID[$i] = $follow->getFollowing();
+            $i = $i + 1;
+        }
+
+        $publication = $this->getDoctrine()->getRepository(Content::class)
+                ->findPublication($followingID);
+
         return $this->render('default/index.html.twig', [
             'controller_name' => 'Social',
             'followings' => $following ,
             'form' => $form->createView(),
             'followers'=>$follower,
+            'publications'=>$publication,
         ]);
     }
 
@@ -121,7 +132,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/social/Conditions", name="conditions")
      */
-    public function conditions(UserInterFace $user)
+    public function conditions(UserInterFace $user = null)
     {
         // Test si la civilité est config - Add in all controller fnct
         $civility = $user->getCivility();

@@ -19,6 +19,16 @@ class ContentRepository extends ServiceEntityRepository
         parent::__construct($registry, Content::class);
     }
 
+    public function findPublication($followingID){
+        $query = $this->createQueryBuilder('c')
+            ->where('c.user in (:user)')
+            ->setParameter('user', $followingID)
+            ->orderBy('c.createAt', 'DESC')
+            ->getQuery();
+ 
+        return $query->getResult();
+    }
+
     // /**
     //  * @return Content[] Returns an array of Content objects
     //  */

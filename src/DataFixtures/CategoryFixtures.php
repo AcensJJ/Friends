@@ -35,11 +35,6 @@ class CategoryFixtures extends Fixture
             ->setImage('assets/images/categories/jeux.jpg');
         $manager->persist($jeuxVideos);
 
-        // $voyage = new Category();
-        // $voyage->setName('Voyage')
-        //     ->setImage('assets/images/categories/voyages.jpg');
-        // $manager->persist($voyage);
-
         $film = new Category();
         $film->setName('Film')
             ->setImage('assets/images/categories/film.jpg');
@@ -70,8 +65,8 @@ class CategoryFixtures extends Fixture
         $this->addReference('art', $art);
         $this->addReference('musique', $musique);
         $this->addReference('jeuxVideos', $jeuxVideos);
+        $this->addReference('jeuxVideos', $jeuxVideos);
         $this->addReference('film', $film);
-        $this->addReference('serie', $serie);
         $this->addReference('instrument', $instrument);
         $this->addReference('jeux', $jeux);
         $this->addReference('animaux', $animaux);

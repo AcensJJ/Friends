@@ -1,4 +1,5 @@
 @import url(font-awesome.min.css);
+@import url(font-awesome-us.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
 
 /*
@@ -6,100 +7,6 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
-/* Google-Font */
-
-/* Style 1 */
-/* cyrillic-ext */
-@font-face {
-	font-family: 'Philosopher';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Philosopher Regular'), local('Philosopher-Regular'), url(https://fonts.gstatic.com/s/philosopher/v10/vEFV2_5QCwIS4_Dhez5jcWBjT00k0w.woff2) format('woff2');
-	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-  }
-  /* cyrillic */
-  @font-face {
-	font-family: 'Philosopher';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Philosopher Regular'), local('Philosopher-Regular'), url(https://fonts.gstatic.com/s/philosopher/v10/vEFV2_5QCwIS4_Dhez5jcWBqT00k0w.woff2) format('woff2');
-	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-  }
-  /* vietnamese */
-  @font-face {
-	font-family: 'Philosopher';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Philosopher Regular'), local('Philosopher-Regular'), url(https://fonts.gstatic.com/s/philosopher/v10/vEFV2_5QCwIS4_Dhez5jcWBhT00k0w.woff2) format('woff2');
-	unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
-  }
-  /* latin */
-  @font-face {
-	font-family: 'Philosopher';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Philosopher Regular'), local('Philosopher-Regular'), url(https://fonts.gstatic.com/s/philosopher/v10/vEFV2_5QCwIS4_Dhez5jcWBuT00.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-
-  /* Style 2 */
-/* cyrillic-ext */
-@font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
-	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-  }
-  /* cyrillic */
-  @font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
-	unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-  }
-  /* greek-ext */
-  @font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
-	unicode-range: U+1F00-1FFF;
-  }
-  /* greek */
-  @font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
-	unicode-range: U+0370-03FF;
-  }
-  /* vietnamese */
-  @font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
-	unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
-  }
-  /* latin-ext */
-  @font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  }
-  /* latin */
-  @font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -298,9 +205,9 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #3c3b3b;
-		font-family: 'Philosopher', sans-serif;
+		font-family: 'Lusitana', serif;
 		font-weight: 800;
-		letter-spacing: 0.10em;
+		letter-spacing: 0.010em;
 		line-height: 1.65;
 		margin: 0 0 1em 0;
 		text-transform: uppercase;
@@ -1883,7 +1790,7 @@ input, select, textarea {
 		-ms-justify-content: -ms-flex-end;
 		justify-content: flex-end;
 		border-bottom: 0;
-		font-family: 'Philosopher', sans-serif;
+		font-family: 'Lusitana', serif;
 		font-size: 0.6em;
 		font-weight: 400;
 		letter-spacing: 0.25em;
@@ -1967,7 +1874,7 @@ input, select, textarea {
 		color: #3c3b3b !important;
 		cursor: pointer;
 		display: inline-block;
-		font-family: 'Philosopher', sans-serif;
+		font-family: 'Lusitana', serif;
 		font-size: 0.6em;
 		font-weight: 800;
 		height: 4.8125em;
@@ -2684,7 +2591,7 @@ input, select, textarea {
 
 				ul.posts article header .published {
 					display: block;
-					font-family: 'Philosopher', sans-serif;
+					font-family: 'Lusitana', serif;
 					font-size: 0.6em;
 					font-weight: 400;
 					letter-spacing: 0.25em;
@@ -2748,7 +2655,7 @@ input, select, textarea {
 
 			.mini-post header .published {
 				display: block;
-				font-family: 'Philosopher', sans-serif;
+				font-family: 'Lusitana', serif;
 				font-size: 0.6em;
 				font-weight: 400;
 				letter-spacing: 0.25em;
@@ -2864,7 +2771,7 @@ input, select, textarea {
 				.post > header .meta .published {
 					color: #3c3b3b;
 					display: block;
-					font-family: 'Philosopher', sans-serif;
+					font-family: 'Lusitana', serif;
 					font-size: 0.7em;
 					font-weight: 800;
 					letter-spacing: 0.25em;
@@ -2918,7 +2825,7 @@ input, select, textarea {
 				.post > footer .stats li {
 					border-left: solid 1px #A1AFA0;
 					display: inline-block;
-					font-family: 'Philosopher', sans-serif;
+					font-family: 'Lusitana', serif;
 					font-size: 0.6em;
 					font-weight: 400;
 					letter-spacing: 0.25em;
@@ -3104,7 +3011,7 @@ input, select, textarea {
 	}
 
 	header p {
-		font-family: 'Philosopher', sans-serif;
+		font-family: 'Lusitana', serif;
 		font-size: 0.7em;
 		font-weight: 400;
 		letter-spacing: 0.25em;
@@ -3263,10 +3170,10 @@ input, select, textarea {
 
 				#header .links ul li a {
 					border-bottom: 0;
-					font-family: 'Philosopher', sans-serif;
+					font-family: 'Lusitana', serif;
 					font-size: 0.7em;
 					font-weight: 400;
-					letter-spacing: 0.10em;
+					letter-spacing: 0.010em;
 					text-transform: uppercase;
 				}
 
@@ -3571,7 +3478,7 @@ input, select, textarea {
 
 	#footer .copyright {
 		color: #947360;
-		font-family: 'Philosopher', sans-serif;
+		font-family: 'Lusitana', serif;
 		font-size: 0.5em;
 		font-weight: 400;
 		letter-spacing: 0.25em;
@@ -3648,7 +3555,7 @@ input, select, textarea {
 					}
 
 					#menu .links > li a p {
-						font-family: 'Philosopher', sans-serif;
+						font-family: 'Lusitana', serif;
 						font-size: 0.6em;
 						font-weight: 400;
 						letter-spacing: 0.25em;
