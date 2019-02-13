@@ -16,25 +16,20 @@
 }
 a.button.fit{
 	width: auto;
-	margin-right: 2.190875%;
-	margin-left: 2.190875%;
+	margin-right: 1.875%;
+	margin-left: 1.875%;
 	text-decoration: none;
 	background-color: #fafafa;
 	box-shadow: inset 0 0 0 1px #777777;
 }
 a.button.fit:hover{
-	width: auto;
-	margin-right: 2.190875%;
-	margin-left: 2.190875%;
-	text-decoration: none;
-	background-color: #fafafa;
 	box-shadow: inset 0 0 0 1px #fe2e2e;
 }
 
 </style>
 		 {% endblock %}
 		 {% block body %}
-		 <div id="main">
+		 <div id="main" style="padding-top: 0px">
 				<section id="two">
 						<a data-toggle="modal" data-target="#exampleModal" class="button fit">Following : {{ app.user.followers | length }}</a>
 						<a data-toggle="modal" data-target="#exampleModal2" class="button fit">Followers : {{ app.user.followings | length }}</a>
@@ -43,7 +38,7 @@ a.button.fit:hover{
 
 				</section>
 				<section id="tree">
-					post
+					<h3 class="text-center">Chargement ...</h3>
 				</section>
 
 
@@ -60,8 +55,8 @@ a.button.fit:hover{
 					<ul class="copyright">
 						<li>&copy; So-SyA</li>
 					</ul>
-				</div>
-			</footer> #}
+				</div> #}
+			</footer>
 
 
 </div>
@@ -72,13 +67,20 @@ a.button.fit:hover{
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Vos abonnements</h5>
       </div>	
-      <div class="modal-body">
+      <div class="modal-body" style="padding-top: 0;">
         {% for follow in followings %}
 				<div class="request-details">
-					<div class="noty-user-img">
-						<img style="width: 100px; height: 100px;" src="{{ asset(follow.following.dataUser.link) }}" alt="">
-					</div>		  		
-					<div class="request-info"><p>{{follow.following.civility.firstName}}  {{follow.following.civility.name}}</p></div>  				
+					<div class="row" style="box-shadow: 0 1px 0 0 #cdcdcd;">
+						<div class="noty-user-img">
+							<img style="padding-top: 25px; width: 100px; height: 125px;" src="{{ asset(follow.following.dataUser.link) }}" alt="">
+						</div>		  		
+						<div class="request-info" style="padding: 7.5%;">
+							<p>{{follow.following.civility.firstName}}  {{follow.following.civility.name}}</p>
+						</div> 
+						<div>
+							<button>TEST</button>
+						</div>
+					</div> 				
 				</div><!--request-detailse end-->
 				<!-- code here -->
    			{% endfor %}

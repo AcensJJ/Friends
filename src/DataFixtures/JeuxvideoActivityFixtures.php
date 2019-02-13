@@ -38,35 +38,11 @@ class JeuxvideoActivityFixtures extends Fixture implements DependentFixtureInter
             ->setImg('assets/images/activity/jeux_video/fps.jpg');
         $manager->persist($jeuxvideo4);
 
-        $jeuxvideo5 = new Activity();
-        $jeuxvideo5->setCategory($jeuxvideo)
-            ->setName('Wargames')
-            ->setImg('assets/images/activity/jeux_video/wargames.jpg');
-        $manager->persist($jeuxvideo5);
-
-        $jeuxvideo6 = new Activity();
-        $jeuxvideo6->setCategory($jeuxvideo)
-            ->setName('MMORPG')
-            ->setImg('assets/images/activity/jeux_video/mmorpg.jpg');
-        $manager->persist($jeuxvideo6);
-
         $jeuxvideo7 = new Activity();
         $jeuxvideo7->setCategory($jeuxvideo)
             ->setName('Plate-forme')
             ->setImg('assets/images/activity/jeux_video/plateforme.jpg');
         $manager->persist($jeuxvideo7);
-
-        $jeuxvideo8 = new Activity();
-        $jeuxvideo8->setCategory($jeuxvideo)
-            ->setName('RPG')
-            ->setImg('assets/images/activity/jeux_video/rpg.png');
-        $manager->persist($jeuxvideo8);
-
-        $jeuxvideo9 = new Activity();
-        $jeuxvideo9->setCategory($jeuxvideo)
-            ->setName('Simulation')
-            ->setImg('assets/images/activity/jeux_video/simulation.jpg');
-        $manager->persist($jeuxvideo9);
 
         $jeuxvideo10 = new Activity();
         $jeuxvideo10->setCategory($jeuxvideo)
@@ -79,18 +55,6 @@ class JeuxvideoActivityFixtures extends Fixture implements DependentFixtureInter
             ->setName('Action')
             ->setImg('assets/images/activity/jeux_video/action.jpg');
         $manager->persist($jeuxvideo11);
-
-        $jeuxvideo12 = new Activity();
-        $jeuxvideo12->setCategory($jeuxvideo)
-            ->setName('Arcade')
-            ->setImg('assets/images/activity/jeux_video/arcade.jpg');
-        $manager->persist($jeuxvideo12);
-
-        $jeuxvideo13 = new Activity();
-        $jeuxvideo13->setCategory($jeuxvideo)
-            ->setName('Stratégie')
-            ->setImg('assets/images/activity/jeux_video/strategie.jpg');
-        $manager->persist($jeuxvideo13);
 
         $jeuxvideo14 = new Activity();
         $jeuxvideo14->setCategory($jeuxvideo)
@@ -109,18 +73,6 @@ class JeuxvideoActivityFixtures extends Fixture implements DependentFixtureInter
             ->setName('Infiltration')
             ->setImg('assets/images/activity/jeux_video/infiltration.png');
         $manager->persist($jeuxvideo16);
-        
-        $jeuxvideo18 = new Activity();
-        $jeuxvideo18->setCategory($jeuxvideo)
-            ->setName('Moba')
-            ->setImg('assets/images/activity/jeux_video/moba.jpg');
-        $manager->persist($jeuxvideo18);
-
-        $jeuxvideo19 = new Activity();
-        $jeuxvideo19->setCategory($jeuxvideo)
-            ->setName('Danse')
-            ->setImg('assets/images/activity/jeux_video/danse.jpg');
-        $manager->persist($jeuxvideo19);
 
         $manager->flush();
     }
