@@ -19,13 +19,29 @@ class ContentRepository extends ServiceEntityRepository
         parent::__construct($registry, Content::class);
     }
 
-    public function findPublication($followingID){
+    public function findPublication($followingID, $limit, $offset = 0)
+    {
         $query = $this->createQueryBuilder('c')
-            ->where('c.user in (:user)')
-            ->setParameter('user', $followingID)
-            ->orderBy('c.createAt', 'DESC')
-            ->getQuery();
+                    ->where('c.user in (:user)')
+                    ->setParameter('user', $followingID)
+                    ->orderBy('c.createAt', 'DESC')
+                    ->setFirstResult($offset)
+                    ->setMaxResults($limit)
+                    ->getQuery();
  
+        return $query->getResult();
+    }
+
+    public function getCountPublication($followingID)
+    {
+        $query = $this->createQueryBuilder('c')
+                    ->where('c.user in (:user)')
+                    ->setParameter('user', $followingID)
+                    ->getQuery();
+
+        $query->select(
+            $query->expr()->count('c.id')
+        );
         return $query->getResult();
     }
 

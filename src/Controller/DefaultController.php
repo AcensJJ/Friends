@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Follow;
 use App\Form\PostType;
 use App\Entity\Content;
@@ -10,7 +11,7 @@ use App\Entity\DataUser;
 use App\Entity\ImgContent;
 use App\Form\CivilityType;
 use App\Form\ImgContentType;
-use App\Entity\User;
+use App\Repository\ContentRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
@@ -77,18 +78,40 @@ class DefaultController extends AbstractController
             $followingID[$i] = $follow->getFollowing();
             $i = $i + 1;
         }
+        $limit = 1;
 
         $publication = $this->getDoctrine()->getRepository(Content::class)
-                ->findPublication($followingID);
+                ->findPublication($followingID, $limit);
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'Social',
             'followings' => $following ,
             'form' => $form->createView(),
-            'followers'=>$follower,
-            'publications'=>$publication,
+            'followers' => $follower,
+            'publications' => $publication,
+            'limit' => $limit,
         ]);
     }
+
+    // /**
+    //  * Avoir les publication
+    //  *
+    //  * @Route("/social/jquery/post", name="more_post")
+    //  * 
+    //  * @param ContentRepository $repo
+    //  * @return Response
+    //  */
+    // public function morePost(ContentRepository $repo) : Response
+    // {
+    //     $limit = $limit + 1;
+
+    //     $publication = $this->getDoctrine()->getRepository(Content::class)
+    //             ->findPublication($followingID, $limit);
+
+    //             return $this->json([
+    //                 'code' => 200, 
+    //                 ], 200);
+    // }
 
     /**
      * @Route("/social/civilite", name="civility")
