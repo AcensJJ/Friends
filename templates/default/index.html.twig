@@ -38,7 +38,6 @@ a.button.fit:hover{
 
 				</section>
 				<section id="tree">
-					{{dump(publications)}}
 				</section>
 
 
@@ -70,15 +69,15 @@ a.button.fit:hover{
       <div class="modal-body" style="padding-top: 0;">
         {% for follow in followings %}
 				<div class="request-details">
-					<div class="row" style="box-shadow: 0 1px 0 0 #cdcdcd;">
+					<div class="row" style="box-shadow: 0 1px 0 0 #cdcdcd ;">
 						<div class="noty-user-img">
 							<img style="padding-top: 25px; width: 100px; height: 125px;" src="{{ asset(follow.following.dataUser.link) }}" alt="">
 						</div>		  		
 						<div class="request-info" style="padding: 7.5%;">
 							<p>{{follow.following.civility.firstName}}  {{follow.following.civility.name}}</p>
 						</div> 
-						<div>
-							<button>TEST</button>
+						<div style="margin-top:8%;margin-left:auto;margin-right:2%;">
+							<button style="">TEST</button>
 						</div>
 					</div> 				
 				</div><!--request-detailse end-->
@@ -97,14 +96,19 @@ a.button.fit:hover{
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Vos abonnés</h5>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="padding-top: 0;">
       	{% for follow in followers %}
 				<div class="request-details">
+					<div class="row" style="box-shadow: 0 1px 0 0 #cdcdcd ;">
 					<div class="noty-user-img">
-						<img src="{{ asset(follow.follower.dataUser.link) }}" alt="">
+						<img style="padding-top: 25px; width: 100px; height: 125px;" src="{{ asset(follow.follower.dataUser.link) }}" alt="">
 					</div>		  		
-					<div class="request-info"><h3>{{follow.follower.civility.firstName}}  {{follow.follower.civility.name}}</h3></div>  				
+					<div class="request-info" style="padding: 7.5%;"><h3>{{follow.follower.civility.firstName}}  {{follow.follower.civility.name}}</h3></div>  				
+					<div style="margin-top:8%;margin-left:auto;margin-right:2%;">
+							<button style="">TEST</button>
+					</div>
 				</div><!--request-detailse end-->
+				</div>
 				<!-- code here -->
    			{% endfor %}
       </div>
