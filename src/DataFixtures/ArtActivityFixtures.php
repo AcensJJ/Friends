@@ -16,55 +16,55 @@ class ArtActivityFixtures extends Fixture implements DependentFixtureInterface
 
         $architecture  = new Activity();
         $architecture ->setName('architecture ')
-            ->setImg('assets/images/activity/art/architecture.jpg')
+            ->setImg('assets/images/activity/art/architectureres.png')
             ->setCategory($art);
         $manager->persist($architecture );
 
         $sculpture = new Activity();;
         $sculpture->setName('sculpture')
-            ->setImg('assets/images/activity/art/sculpteur.jpg')
+            ->setImg('assets/images/activity/art/sculpteurres.png')
             ->setCategory($art);
         $manager->persist($sculpture);
 
         $artsVisuels = new Activity();
         $artsVisuels->setName('arts visuels (peinture , dessin, etc.)')
-            ->setImg('assets/images/activity/art/visuel.jpg')
+            ->setImg('assets/images/activity/art/visuelres.png')
             ->setCategory($art);
         $manager->persist($artsVisuels);
 
         $musique = new Activity();
         $musique->setName('musique')
-            ->setImg('assets/images/activity/art/classic.jpg')
+            ->setImg('assets/images/activity/art/classicres.png')
             ->setCategory($art);
         $manager->persist($musique);
         
         $littérature = new Activity();
         $littérature->setName('littérature (poésie ou dramaturgie)')
-            ->setImg('assets/images/activity/art/litterature.jpg')
+            ->setImg('assets/images/activity/art/litteratureres.png')
             ->setCategory($art);
         $manager->persist($littérature);
 
         $artsDeLaScène = new Activity();
         $artsDeLaScène->setName('arts de la scène (théâtre, danse, mime, cirque)')
-            ->setImg('assets/images/activity/art/theatre.jpg')
+            ->setImg('assets/images/activity/art/theatreres.png')
             ->setCategory($art);
         $manager->persist($artsDeLaScène);
 
         $cinema = new Activity();
         $cinema->setName('Cinéma')
-            ->setImg('assets/images/activity/art/cinema.jpg')
+            ->setImg('assets/images/activity/art/cinemares.png')
             ->setCategory($art);
         $manager->persist($cinema);
 
         $lesArtsMediatiques = new Activity();
         $lesArtsMediatiques->setName('Les arts médiatiques (télévision, radio, photographie)')
-            ->setImg('assets/images/activity/art/journalisme.jpg')
+            ->setImg('assets/images/activity/art/journalismeres.png')
             ->setCategory($art);
         $manager->persist($lesArtsMediatiques);
 
         $bd = new Activity();
         $bd->setName('La bande-dessinée')
-            ->setImg('assets/images/activity/art/bd.jpg')
+            ->setImg('assets/images/activity/art/bdres.png')
             ->setCategory($art);
         $manager->persist($bd);
 

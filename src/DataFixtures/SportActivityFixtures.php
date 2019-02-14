@@ -16,31 +16,31 @@ class SportActivityFixtures extends Fixture implements DependentFixtureInterface
         
         $hiver = new Activity();
         $hiver->setName('Sports d\'hiver')
-            ->setImg('assets/images/activity/sport/hiver.jpg')
+            ->setImg('assets/images/activity/sport/hiverres.png')
             ->setCategory($sport);
         $manager->persist($hiver);
 
         $equipe = new Activity();
         $equipe->setName('Sports d\'équipe')
-            ->setImg('assets/images/activity/sport/equipe.jpg')
+            ->setImg('assets/images/activity/sport/equiperes.png')
             ->setCategory($sport);
         $manager->persist($equipe);
 
         $indi = new Activity();
         $indi->setName('Sports individuels')
-            ->setImg('assets/images/activity/sport/individuel.jpg')
+            ->setImg('assets/images/activity/sport/individuelres.png')
             ->setCategory($sport);
         $manager->persist($indi);
         
         $aqua = new Activity();
         $aqua->setName('Sports aquatiques')
-            ->setImg('assets/images/activity/sport/aquatique.jpg')
+            ->setImg('assets/images/activity/sport/aquatiqueres.png')
             ->setCategory($sport);
         $manager->persist($aqua);
 
         $muscu = new Activity();
         $muscu->setName('Musculation')
-            ->setImg('assets/images/activity/sport/muscu.jpg')
+            ->setImg('assets/images/activity/sport/muscures.png')
             ->setCategory($sport);
         $manager->persist($muscu);
         

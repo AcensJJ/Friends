@@ -17,37 +17,37 @@ class JeuActivityFixtures extends Fixture implements DependentFixtureInterface
         $jeux1 = new Activity();
         $jeux1->setCategory($jeux)
             ->setName('Karaoké')
-            ->setImg('assets/images/activity/jeux/karaoke.jpg');
+            ->setImg('assets/images/activity/jeux/karaokeres.png');
         $manager->persist($jeux1);
         
         $jeux2 = new Activity();
         $jeux2->setCategory($jeux)
             ->setName('Escape game')
-            ->setImg('assets/images/activity/jeux/escapegame.jpg');
+            ->setImg('assets/images/activity/jeux/escapegameres.png');
         $manager->persist($jeux2);
         
         $jeux3 = new Activity();
         $jeux3->setCategory($jeux)
             ->setName('Jeu de société')
-            ->setImg('assets/images/activity/jeux/societe.jpg');
+            ->setImg('assets/images/activity/jeux/societeres.png');
         $manager->persist($jeux3);
         
         $jeux4 = new Activity();
         $jeux4->setCategory($jeux)
             ->setName('Bar de jeu')
-            ->setImg('assets/images/activity/jeux/barjeu.jpg');
+            ->setImg('assets/images/activity/jeux/barjeures.png');
         $manager->persist($jeux4);
         
         $jeux5 = new Activity();
         $jeux5->setCategory($jeux)
             ->setName('Jeu de rôles')
-            ->setImg('assets/images/activity/jeux/jdr.jpg');
+            ->setImg('assets/images/activity/jeux/jdrres.png');
         $manager->persist($jeux5);
 
         $jeux6 = new Activity();
         $jeux6->setCategory($jeux)
             ->setName('Jeu en soirée')
-            ->setImg('assets/images/activity/jeux/jeusoire.jpg');
+            ->setImg('assets/images/activity/jeux/jeusoireres.png');
         $manager->persist($jeux6);
 
         $manager->flush();

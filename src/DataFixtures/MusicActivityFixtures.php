@@ -17,43 +17,43 @@ class MusicActivityFixtures extends Fixture implements DependentFixtureInterface
         $rap = new Activity();
         $rap->setName('Rap')
             ->setCategory($musi)
-            ->setImg('assets/images/activity/musique/rap.jpg');
+            ->setImg('assets/images/activity/musique/rapres.png');
         $manager->persist($rap);
 
         $hiphop = new Activity();
         $hiphop->setName('Hip-hop')
             ->setCategory($musi)
-            ->setImg('assets/images/activity/musique/hiphop.jpg');
+            ->setImg('assets/images/activity/musique/hiphopres.png');
         $manager->persist($hiphop);
 
         $classic = new Activity();
         $classic->setName('Classique')
             ->setCategory($musi)
-            ->setImg('assets/images/activity/musique/classic.jpg');
+            ->setImg('assets/images/activity/musique/classicres.png');
         $manager->persist($classic);
 
         $electro = new Activity();
         $electro->setName('Electro')
             ->setCategory($musi)
-            ->setImg('assets/images/activity/musique/electro.jpg');
+            ->setImg('assets/images/activity/musique/electrores.png');
         $manager->persist($electro);
 
         $rock = new Activity();
         $rock->setName('Rock')
             ->setCategory($musi)
-            ->setImg('assets/images/activity/musique/rock.jpg');
+            ->setImg('assets/images/activity/musique/rockres.png');
         $manager->persist($rock);
 
         $bs = new Activity();
         $bs->setName('Bande son')
             ->setCategory($musi)
-            ->setImg('assets/images/activity/musique/soundtrack.jpg');
+            ->setImg('assets/images/activity/musique/soundtrackres.png');
         $manager->persist($bs);
 
         $variete = new Activity();
         $variete->setName('Variété')
             ->setCategory($musi)
-            ->setImg('assets/images/activity/musique/variete.jpg');
+            ->setImg('assets/images/activity/musique/varieteres.png');
         $manager->persist($variete);
 
         $manager->flush();

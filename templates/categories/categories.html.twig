@@ -7,6 +7,7 @@
 	<style>
 	.img-resize{
 		width: 100%;
+		height: 100%;
 	}
 	#wrapper{
 		margin: 0;
@@ -27,6 +28,18 @@
 		</article>
 	
 	{% endfor %}
+
+	 <article class="thumb">
+			<a class="image effet-zoom" href="#">
+				<img class="img-resize" src="{{ asset('assets/images/categories/logo.png') }}" alt="" />
+			</a>
+		</article>
+
+		<article class="thumb">
+			<a class="image effet-zoom" href="#">
+				<img class="img-resize" src="{{ asset('assets/images/categories/avenir.png') }}" alt="" />
+			</a>
+		</article> 
 </div>
 {% endblock %}
 {% block javascripts %}

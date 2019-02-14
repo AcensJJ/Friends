@@ -16,31 +16,31 @@ class CultureActivityFixtures extends Fixture implements DependentFixtureInterfa
 
         $cinema = new Activity();
         $cinema->setName('Culture cinématographique')
-            ->setImg('assets/images/activity/culture/cinema.jpg')
+            ->setImg('assets/images/activity/culture/cinemares.png')
             ->setCategory($cult);
         $manager->persist($cinema);
 
         $lecture = new Activity();
         $lecture->setName('Culture littéraire')
-            ->setImg('assets/images/activity/culture/litterature.jpg')    
+            ->setImg('assets/images/activity/culture/litteratureres.png')    
             ->setCategory($cult);
         $manager->persist($lecture);
 
         $musique = new Activity();
         $musique->setName('Culture musicale')
-            ->setImg('assets/images/activity/culture/music.jpg')
+            ->setImg('assets/images/activity/culture/musicres.png')
             ->setCategory($cult);
         $manager->persist($musique);
 
         $theatre = new Activity();
         $theatre->setName('Culture théâtrale')
-            ->setImg('assets/images/activity/culture/theatre.jpg')
+            ->setImg('assets/images/activity/culture/theatreres.png')
             ->setCategory($cult);
         $manager->persist($theatre);
 
         $artistique = new Activity();
         $artistique->setName('Culture artistique')
-            ->setImg('assets/images/activity/culture/artistique.jpg')
+            ->setImg('assets/images/activity/culture/artistiqueres.png')
             ->setCategory($cult);
         $manager->persist($artistique);
         
