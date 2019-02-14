@@ -37,12 +37,43 @@ a.button.fit:hover{
 						<a href="{{ path('user_page_profil') }}" class="button fit">Voir votre profil</a>
 
 				</section>
+				
+				
+	{{dump(publications)}}
+
+
+		
 				<section id="tree">
+	 {% for pub in publications %}
+
+	<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">					{{pub.title}}</a></h2>
+										<p></p>
+									</div>
+									<div class="meta">
+										<time class="published">{{pub.createAt.date}}</time>
+										<a href="#" class="author"><span class="name">nom</span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+								<a href="#" class="image featured"><img src="	{{pub.title}}" alt="" /></a>
+								<p>					{{pub.title}}</p>
+								<footer>
+									<ul class="actions">
+										<li><a href="#" class="button big">Continue Reading</a></li>
+									</ul>
+									<ul class="stats">
+										<li><a href="#" class="icon fa-heart">28</a></li>
+										<li><a href="#" class="icon fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+ {% endfor %}
 				</section>
 
 
 			</div>
-
 		<!-- Footer -->
 			<footer id="footer">
 				{# <div class="inner">
@@ -56,6 +87,7 @@ a.button.fit:hover{
 					</ul>
 				</div> #}
 			</footer>
+	
 
 
 </div>

@@ -78,10 +78,12 @@ class DefaultController extends AbstractController
             $followingID[$i] = $follow->getFollowing();
             $i = $i + 1;
         }
-        $limit = 1;
+        $limit = 50;
+
 
         $publication = $this->getDoctrine()->getRepository(Content::class)
                 ->findPublication($followingID, $limit);
+
 
         return $this->render('default/index.html.twig', [
             'controller_name' => 'Social',
