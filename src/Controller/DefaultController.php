@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\Follow;
+use App\Form\DataType;
 use App\Form\PostType;
 use App\Entity\Content;
 use App\Entity\Civility;
@@ -78,7 +79,7 @@ class DefaultController extends AbstractController
             $followingID[$i] = $follow->getFollowing();
             $i = $i + 1;
         }
-        $limit = 1;
+        $limit = 50;
 
         $publication = $this->getDoctrine()->getRepository(Content::class)
                 ->findPublication($followingID, $limit);
@@ -92,26 +93,6 @@ class DefaultController extends AbstractController
             'limit' => $limit,
         ]);
     }
-
-    // /**
-    //  * Avoir les publication
-    //  *
-    //  * @Route("/social/jquery/post", name="more_post")
-    //  * 
-    //  * @param ContentRepository $repo
-    //  * @return Response
-    //  */
-    // public function morePost(ContentRepository $repo) : Response
-    // {
-    //     $limit = $limit + 1;
-
-    //     $publication = $this->getDoctrine()->getRepository(Content::class)
-    //             ->findPublication($followingID, $limit);
-
-    //             return $this->json([
-    //                 'code' => 200, 
-    //                 ], 200);
-    // }
 
     /**
      * @Route("/social/civilite", name="civility")
@@ -148,6 +129,57 @@ class DefaultController extends AbstractController
 
         return $this->render('default/civility.html.twig', [
             'controller_name' => 'Civilité',
+            'form' => $form->createView(),
+        ]);
+    }
+
+     /**
+     * @Route("/social/data", name="data")
+     */
+    public function data(UserInterface $user, ObjectManager $manager, Request $request)
+    {
+        // Test si la civilité est config - Add in all controller fnct
+        $civility = $user->getCivility();
+        if($civility == null){
+            return $this->redirectToRoute('civility');        
+        }
+       
+        // voir si l' entité existe
+        $data = $user->getDataUser();
+
+        $form = $this->createForm(DataType::class, $data);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            
+            // upload PP 
+            $file = $request->files->get('post')['link'];
+                $upload_directory = $this->getParameter('upload_directory_pp');
+                $filename = md5(uniqid()) . '.' . $file->guessExtension();
+                $file->move(
+                    $upload_directory,
+                    $filename
+                );
+                $data->setLink("assets/images/ressources/pp/$filename")
+                    ->setContent($post);
+
+            // upload BG
+            $file = $request->files->get('post')['bgLink'];
+            $upload_directory = $this->getParameter('upload_directory_bg');
+            $filename = md5(uniqid()) . '.' . $file->guessExtension();
+            $file->move(
+                $upload_directory,
+                $filename
+            );
+            $data->setBgLink("assets/images/ressources/bg/$filename");
+              
+            $manager->persist($data);
+            $manager->flush();
+            $this->addFlash('success', 'Vos informations ont bien été enregistré !');
+            return $this->redirectToRoute('social');
+        }
+
+        return $this->render('default/data.html.twig', [
+            'controller_name' => 'Utilisateur',
             'form' => $form->createView(),
         ]);
     }

@@ -1,342 +1,163 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.Twig' %}
+
+{% block stylesheets_before %}
+	<link rel="stylesheet" href="{{ asset('assets/identity/css/main.css') }}" />
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/nav/css/main.css') }}" />
+    <style>
+    /* Main */
+
+	#main {
+        flex-grow: 0;
+        width: 25%;
+	}
+
+    /* body */
+
+    body {
+        padding-top: 0;
+		height: 100%;
+		background-color: #ffffff;
+		background-image: url(utilisateur.dataUser.link), -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg.jpg");
+		background-image: url(utilisateur.dataUser.link), -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg.jpg");
+		background-image: url(utilisateur.dataUser.link), -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg.jpg");
+		background-image: url(utilisateur.dataUser.link), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("../../images/bg.jpg");
+		background-repeat: repeat,			no-repeat,			no-repeat;
+		background-size: 100px 100px, cover,				cover;
+		background-position: top left,		center center,		bottom center;
+		background-attachment: fixed,			fixed,				fixed;
+	}
+
+		body:after {
+			content: '';
+			display: block;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: inherit;
+			opacity: 0;
+			z-index: 1;
+			background-color: #ffffff;
+			background-image: url(utilisateur.dataUser.link), -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+			background-image: url(utilisateur.dataUser.link), -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+			background-image: url(utilisateur.dataUser.link), -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+			background-image: url(utilisateur.dataUser.link), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+			background-repeat: repeat,			no-repeat;
+			background-size: 100px 100px, cover;
+			background-position: top left,		center center;
+			-moz-transition: opacity 1.75s ease-out;
+			-webkit-transition: opacity 1.75s ease-out;
+			-ms-transition: opacity 1.75s ease-out;
+			transition: opacity 1.75s ease-out;
+		}
+
+		body.is-preload:after {
+			opacity: 1;
+		}
+
+    /* wrapper */
+    
+    #wrapper{
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-right: 0px;
+        padding-left: 0px;
+        width: 100%;
+        
+    }
+    
+    </style>
+{% endblock %}
+
 {% block body %}
-    <section class="cover-sec">
-        <img src="{{ asset(utilisateur.dataUser.bgLink) }}" alt=""></section>
-        <main>
-            <div class="main-section">
-                <div class="container">
-                    <div class="main-section-data">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="main-left-sidebar">
-                                    <div class="user_profile">
-                                        <div class="user-pro-img">
-                                            <img src="{{ asset(utilisateur.dataUser.link) }}" alt=""></div>
-                                            <!--user-pro-img end-->
-                                            <div class="user_pro_status">
-                                                <ul class="flw-hr">
-                                                    <li>
-                                                        <a class="flww" href="#" title="">
-                                                            <i class="la la-plus"></i>
-                                                            Follow</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="hre" href="#" title="">Hire</a>
-                                                    </li>
-                                                </ul>
-                                                <ul class="flw-status">
-                                                    <li>
-                                                        <span>Abonnements</span>
-                                                        <b>
-                                                            {{ utilisateur.followings | length }}</b>
-                                                    </li>
-                                                    <li>
-                                                        <span>Abonnés</span>
-                                                        <b>
-                                                            {{ utilisateur.followers | length }}</b>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!--user_pro_status end-->
-                                            <ul class="social_links">
-                                                <li>
-                                                    <a href="Https://www.facebook.com/{{ utilisateur.dataUser.facebook }}" title="">
-                                                        <i class="fa fa-facebook-square"></i>
-                                                        Https://www.facebook.com/{{ utilisateur.dataUser.facebook }}</a>
-                                                </li>
-                                                <li>
-                                                    <a href="Https://www.twitter.com/{{ utilisateur.dataUser.twitter }}" title="">
-                                                        <i class="fa fa-twitter"></i>
-                                                        Https://www.twitter.com/{{ utilisateur.dataUser.twitter }}</a>
-                                                </li>
-                                                <li>
-                                                    <a href="Https://www.instagram.com/{{ utilisateur.dataUser.instagram }}" title="">
-                                                        <i class="fa fa-instagram"></i>
-                                                        Https://www.instagram.com/{{ utilisateur.dataUser.instagram }}</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <!--user_profile end-->
-                                    </div>
-                                    <!--main-left-sidebar end-->
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="main-ws-sec">
-                                        <div class="user-tab-sec">
-                                            <h3>
-                                                {{ utilisateur.username }}</h3>
-                                            <div class="tab-feed">
-                                                <ul>
-                                                    <li data-tab="feed-dd" class="active">
-                                                        <a href="#" title="">
-                                                            <span>Actu</span>
-                                                        </a>
-                                                    </li>
-                                                    <li data-tab="info-dd">
-                                                        <a href="#" title="">
-                                                            <span>Info</span>
-                                                        </a>
-                                                    </li>
-                                                    <li data-tab="portfolio-dd">
-                                                        <a href="#" title="">
-                                                            <span>Photo</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- tab-feed end-->
-                                        </div>
-                                        <!--user-tab-sec end-->
-                                        <div class="product-feed-tab current" id="feed-dd">
-                                            <div class="posts-section">
-                                                <div class="post-bar">
-                                                    <div class="post_topbar">
-                                                        <div class="usy-dt">
-                                                            <img src="{{ asset('images/resources/us-pic.png') }}" alt="">
-                                                                <div class="usy-name">
-                                                                    <h3>John Doe</h3>
-                                                                    <span>
-                                                                        <img src="{{ asset('images/clock.png') }}" alt="">3 min ago</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="ed-opts">
-                                                                    <a class="ed-opts-open" href="#" title="">
-                                                                        <i class="la la-ellipsis-v"></i>
-                                                                    </a>
-                                                                    <ul class="ed-options">
-                                                                        <li>
-                                                                            <a href="#" title="">Edit Post</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#" title="">Unsaved</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#" title="">Unbid</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#" title="">Close</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#" title="">Hide</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="epi-sec">
-                                                                <ul class="descp">
-                                                                    <li>
-                                                                        <img src="{{ asset('images/icon8.png') }}" alt="">
-                                                                            <span>Epic Coder</span>
-                                                                        </li>
-                                                                        <li>
-                                                                            <img src="{{ asset('images/icon9.png') }}" alt="">
-                                                                                <span>India</span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <ul class="bk-links">
-                                                                            <li>
-                                                                                <a href="#" title="">
-                                                                                    <i class="la la-bookmark"></i>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#" title="">
-                                                                                    <i class="la la-envelope"></i>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="job_descp">
-                                                                        <h3>Senior Wordpress Developer</h3>
-                                                                        <ul class="job-dt">
-                                                                            <li>
-                                                                                <a href="#" title="">Full Time</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <span>$30 / hr</span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus hendrerit metus, ut ullamcorper quam finibus at. Etiam id magna sit amet...
-                                                                            <a href="#" title="">view more</a>
-                                                                        </p>
-                                                                        <ul class="skill-tags">
-                                                                            <li>
-                                                                                <a href="#" title="">HTML</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#" title="">PHP</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#" title="">CSS</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#" title="">Javascript</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#" title="">Wordpress</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="job-status-bar">
-                                                                        <ul class="like-com">
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <i class="la la-heart"></i>
-                                                                                    Like</a>
-                                                                                <img src="{{ asset('images/liked-img.png') }}" alt="">
-                                                                                    <span>25</span>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a class="com" href="#" title="">
-                                                                                        <img src="{{ asset('images/com.png') }}" alt="">
-                                                                                            Comment 15</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                                <a>
-                                                                                    <i class="la la-eye"></i>Views 50</a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!--post-bar end-->
-                                                                        <div class="process-comm">
-                                                                            <a href="#" title="">
-                                                                                <img src="{{ asset('images/process-icon.png') }}" alt=""></a>
-                                                                            </div>
-                                                                            <!--process-comm end-->
-                                                                        </div>
-                                                                        <!--posts-section end-->
-                                                                    </div>
-                                                                    <!--product-feed-tab end-->
-                                                                    <div class="product-feed-tab" id="info-dd">
-                                                                        <div class="user-profile-ov">
-                                                                            <h3>Information</h3>
-                                                                            <p>Faire appel a la bdd et faire un tableau affichant les activités de l'utilisateur</p>
-                                                                        </div>
-                                                                        <!--user-profile-ov end-->
-                                                                    </div>
-                                                                    <!--product-feed-tab end-->
-                                                                    <div class="product-feed-tab" id="portfolio-dd">
-                                                                        <div class="portfolio-gallery-sec">
-                                                                            <h3>Photo</h3>
-                                                                            <div class="gallery_pf">
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
-                                                                                        <div class="gallery_pt">
-                                                                                            <img src="{{ asset('images/resources/pf-img1.jpg') }}" alt="">
-                                                                                                <a href="#" title="">
-                                                                                                    <i class="expand arrows alternate icon"></i>
-                                                                                                </a>
-                                                                                            </div>
-                                                                                            <!--gallery_pt end-->
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <!--gallery_pf end-->
-                                                                            </div>
-                                                                            <!--portfolio-gallery-sec end-->
-                                                                        </div>
-                                                                        <!--product-feed-tab end-->
-                                                                    </div>
-                                                                    <!--main-ws-sec end-->
-                                                                </div>
-                                                                <div class="col-lg-3">
-                                                                    <div class="right-sidebar">
-                                                                        <div class="message-btn">
-                                                                            <a href="#" title="">
-                                                                                <i class="fa fa-envelope"></i>
-                                                                                Message</a>
-                                                                        </div>
-                                                                        <div class="widget widget-portfolio">
-                                                                            <div class="wd-heady">
-                                                                                <h3>Photo</h3>
-                                                                                <img src="{{ asset('images/photo-icon.png') }}" alt=""></div>
-                                                                                <div class="pf-gallery">
-                                                                                    <ul>
-                                                                                        <li>
-                                                                                            <a href="#" title="">
-                                                                                                <img src="{{ asset('images/resources/pf-gallery1.png') }}" alt=""></a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a href="#" title="">
-                                                                                                    <img src="{{ asset('images/resources/pf-gallery2.png') }}" alt=""></a>
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                    <a href="#" title="">
-                                                                                                        <img src="{{ asset('images/resources/pf-gallery3.png') }}" alt=""></a>
-                                                                                                    </li>
-                                                                                                    <li>
-                                                                                                        <a href="#" title="">
-                                                                                                            <img src="{{ asset('images/resources/pf-gallery4.png') }}" alt=""></a>
-                                                                                                        </li>
-                                                                                                        <li>
-                                                                                                            <a href="#" title="">
-                                                                                                                <img src="{{ asset('images/resources/pf-gallery5.png') }}" alt=""></a>
-                                                                                                            </li>
-                                                                                                            <li>
-                                                                                                                <a href="#" title="">
-                                                                                                                    <img src="{{ asset('images/resources/pf-gallery6.png') }}" alt=""></a>
-                                                                                                                </li>
-                                                                                                                <li>
-                                                                                                                    <a href="#" title="">
-                                                                                                                        <img src="{{ asset('images/resources/pf-gallery7.png') }}" alt=""></a>
-                                                                                                                    </li>
-                                                                                                                    <li>
-                                                                                                                        <a href="#" title="">
-                                                                                                                            <img src="{{ asset('images/resources/pf-gallery8.png') }}" alt=""></a>
-                                                                                                                        </li>
-                                                                                                                        <li>
-                                                                                                                            <a href="#" title="">
-                                                                                                                                <img src="{{ asset('images/resources/pf-gallery9.png') }}" alt=""></a>
-                                                                                                                            </li>
-                                                                                                                            <li>
-                                                                                                                                <a href="#" title="">
-                                                                                                                                    <img src="{{ asset('images/resources/pf-gallery10.png') }}" alt=""></a>
-                                                                                                                                </li>
-                                                                                                                                <li>
-                                                                                                                                    <a href="#" title="">
-                                                                                                                                        <img src="{{ asset('images/resources/pf-gallery11.png') }}" alt=""></a>
-                                                                                                                                    </li>
-                                                                                                                                    <li>
-                                                                                                                                        <a href="#" title="">
-                                                                                                                                            <img src="{{ asset('images/resources/pf-gallery12.png') }}" alt=""></a>
-                                                                                                                                        </li>
-                                                                                                                                    </ul>
-                                                                                                                                </div>
-                                                                                                                                <!--pf-gallery end-->
-                                                                                                                            </div>
-                                                                                                                            <!--widget-portfolio end-->
-                                                                                                                        </div>
-                                                                                                                        <!--right-sidebar end-->
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                            <!-- main-section-data end-->
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </main>
-                                                                                                <div class="overview-box" id="create-portfolio">
-                                                                                                    <div class="overview-edit">
-                                                                                                        <h3>Titre</h3>
-                                                                                                        <div class="pf-img">
-                                                                                                            <img src="{{ asset('images/resources/np.png') }}" alt=""></div>
-                                                                                                            <a class="close-box" href="#" title="">
-                                                                                                                <i class="la la-close"></i>
-                                                                                                            </a>
-                                                                                                        </div>
-                                                                                                        <!--overview-edit end-->
-                                                                                                    </div>
-                                                                                                    <!--overview-box end-->
-                                                                                                </div>
-                                                                                                <!--theme-layout end-->
-                                                                                            {% endblock %}
-                                                                                            {% block javascripts %}
-                                                                                                {# Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support. #}
-                                                                                                <script>
-                                                                                                    'undefined' === typeof _trfq || (window._trfq =[]);
-                                                                                                    'undefined' === typeof _trfd && (window._trfd =[]),
-                                                                                                    _trfd.push({'tccl.baseHost': 'secureserver.net'}),
-                                                                                                    _trfd.push({
-                                                                                                        'ap': 'cpsh'
-                                                                                                    }, {'server': 'a2plcpnl0235'})
-                                                                                                </script>
-                                                                                            {% endblock %}
-                                                                                        
+    <section id="main">
+        <header>
+            <span class="avatar">
+                <img style="height 122px; witdh: 122px;" src="{{ asset(utilisateur.dataUser.link) }}" alt="" />
+            </span>
+            <h1>{{utilisateur.civility.name}} {{utilisateur.civility.firstName}}</h1>
+            <p>{{utilisateur.civility.description}}</p>
+            {% if utilisateur != app.user %}
+                <a href="{{ path('follow_this', {'id': utilisateur.id}) }}" class="button alt js-follow">
+                    {% if utilisateur.isFollowByUser(app.user) %}
+                    {% set data = "Following"  %}
+                    {% else %}
+                    {% set data = "Follow" %}
+                    {% endif %}
+                    <div
+                    {# Si on a l'activiter alors ça ajoute la balise #}
+                    {% if utilisateur.isFollowByUser(app.user) %}
+                    class="followDiv removeFollow"
+                    {% else %}
+                    class="followDiv addFollow"
+                    {% endif %}> 
+                        <span class="js-data">{{ data }}</span>
+                    </div>
+                </a>
+            {% endif %}
+        </header>
+        <footer>
+            <ul class="icons">
+                {% if utilisateur.dataUser.twitter != null %}
+                    <li>
+                        <a href="https://www.twitter.com/{{utilisateur.dataUser.twitter}}" class="fa-twitter">Twitter</a>
+                    </li>
+                {% endif %}
+                {% if utilisateur.dataUser.instagram != null %}
+                    <li>
+                        <a href="https://www.instagram.com/{{utilisateur.dataUser.instagram}}" class="fa-instagram">Instagram</a>
+                    </li>
+                {% endif %}
+                {% if utilisateur.dataUser.facebook != null %}
+                    <li>
+                        <a href="https://www.facebook.com/{{utilisateur.dataUser.facebook}}" class="fa-facebook">Facebook</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </footer>
+    </section>
+{% endblock %}	
+
+{% block javascripts %}
+    {# Axios #}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // fonction de l'evenement
+        function onClickBtnFollow(event){
+            event.preventDefault();
+            // les variables
+            const url = this.href;
+            const btn = this.querySelector('div.followDiv');
+            const span = this.querySelector('span.js-data');
+            // la requete
+            axios.get(url).then(function(response) {
+                if (btn.classList.contains('addFollow')) {
+					span.textContent = "Following";
+                    btn.classList.replace('addFollow', 'removeFollow');
+                } else {
+					span.textContent = "Follow";
+                    btn.classList.replace('removeFollow', 'addFollow'); 
+                } 
+            }).catch(function (error) {
+                if (error.response.status === 403) {
+                    window.alert("Accès refusé !");
+                } else if (error.response.status === 404) {
+                    window.alert("Requête non trouvée !");
+                } else if (error.response.status === 401) {
+                    window.alert("Vous n'êtes pas connecté !");
+                } else {
+                    window.alert("Une erreur s'est produite, réessayez plus tard");
+                }
+            });
+        }
+        // pour chaque a avec la class js-act , boucle les liens
+        document.querySelectorAll('a.js-follow').forEach(function(link){
+            // ajoute l'evenement on click
+            link.addEventListener('click', onClickBtnFollow);
+        })
+    </script>
+{% endblock %}
+                    

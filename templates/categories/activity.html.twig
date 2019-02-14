@@ -70,15 +70,15 @@
 					<h3 class="name">{{ act.name }}</h3>
 					
 					<a href="{{ path('activity_change', {'id': act.id}) }}" class="button alt js-act">
-					<div 
-					{# Si on a l'activiter alors ça ajoute la balise #}
-					{% if act.isHobbyByUser(app.user) %}
-					class="colorText remove"
-					{% else %}
-					class="colorText add"
-					{% endif %}>
-					<span class="js-data">{{ data }}</span>
-					</div>
+						<div 
+						{# Si on a l'activiter alors ça ajoute la balise #}
+						{% if act.isHobbyByUser(app.user) %}
+						class="colorText remove"
+						{% else %}
+						class="colorText add"
+						{% endif %}>
+							<span class="js-data">{{ data }}</span>
+						</div>
 					</a>
 					
 				</section>
