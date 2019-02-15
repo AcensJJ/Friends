@@ -32,17 +32,10 @@ class CategoriesController extends AbstractController
 
         $repo = $this->getDoctrine()->getRepository(Category::class);
         $categories = $repo->findAll();
-        // couleur random
-        $i = random_int(1, 6);
-        // taille des div
-        $size = array('1' => '54','2' => '40','3' => '37','4' => '20','5' => '34','6' => '47','7' => '47','8' => '30','9' => '31','10' => '30');
-        
+
         return $this->render('categories/categories.html.twig', [
             'controller_name' => 'Categories',
             'categories' => $categories,
-            'i' => $i,
-            'a' => 1,
-            'size' => $size,
         ]);
     }
 

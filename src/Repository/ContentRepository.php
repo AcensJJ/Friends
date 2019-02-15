@@ -24,6 +24,7 @@ class ContentRepository extends ServiceEntityRepository
         $query = $this->createQueryBuilder('c')
                     ->where('c.user in (:user)')
                     ->setParameter('user', $followingID)
+                    ->andWhere('c.enable = 1')
                     ->orderBy('c.createAt', 'DESC')
                     ->setFirstResult($offset)
                     ->setMaxResults($limit)
