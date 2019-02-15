@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Content;
 use App\Entity\LikeContent;
+use App\Repository\LikeContentRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,9 +20,10 @@ class PostController extends AbstractController
      * @param Content $post
      * @param ObjectManager $manager
      * @param UserInterface $user
+     * @param LikeContentRepository $likeRepo
      * @return Response
      */
-    public function like(Content $post, ObjectManager $manager, UserInterface $user) : Response
+    public function like(Content $post, LikeContentRepository $likeRepo, ObjectManager $manager, UserInterface $user) : Response
     {
         if($post->isLikedByUser($user)) {
             $idLike = $post->getId();
@@ -33,6 +35,7 @@ class PostController extends AbstractController
             return $this->json([
                 'code' => 200, 
                 'message' => 'Vous n\'aimez plus cette publication',
+                'likes' => $likeRepo->count(['content' => $post]),
                 ], 200);
         }
         
@@ -46,6 +49,7 @@ class PostController extends AbstractController
         return $this->json([
             'code' => 200, 
             'message' => 'Vous aimez cette publication',
+            'likes' => $likeRepo->count(['content' => $post]),
             ]
             , 200);
     }

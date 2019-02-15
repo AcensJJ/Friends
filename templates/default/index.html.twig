@@ -1,6 +1,7 @@
 {% extends 'base.html.Twig' %}
 	{% block stylesheets %}
 	{# bootstrap #}
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<link rel="stylesheet" href="{{ asset('assets/strata/css/main.css') }}" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="{{ asset('assets/nav/css/main.css') }}" />
@@ -37,26 +38,72 @@ a.button.fit:hover{
 						<a href="{{ path('user_page_profil') }}" class="button fit">Voir votre profil</a>
 
 				</section>
+		
 				<section id="tree">
-					{{dump(publications)}}
+	 {% for pub in publications %}
+
+	<article class="post">
+								<header>
+									<div class="title">
+										<h2>
+											<a href="#">{{ pub.title }}</a>
+										</h2>
+									</div>
+									<div class="meta">
+										<time class="published">{{ pub.createAt.date | date('d/m/Y') }}</time>
+										<a href=" {{ path('user_page', {'id': pub.user.id}) }}" class="author">
+											<span class="name">{{ pub.user.civility.name }} {{ pub.user.civility.firstName }}</span>
+											<img src="{{ pub.user.dataUser.link }}" alt="" />
+										</a>
+									</div>
+								</header>
+								<a href="#" class="image featured">
+									{# <img src="	{{ pub.imgContent }}" alt="" /> #}
+								</a>
+								<p>{{ pub.title }}</p>
+								<footer>
+									{# <ul class="actions">
+										<li>
+											<a href="#" class="button big">Continue Reading</a>
+										</li>
+									</ul> #}
+									<ul class="stats">
+										<li>
+											<a href="{{ path('like_this', {'id': pub.id}) }}" class="likeBtn js-like">
+											
+												{% if pub.isLikedByUser(app.user) %}
+												<i class="fas fa-heart"></i>
+												{% else %}
+												<i class="far fa-heart"></i>
+												{% endif %}
+												<span class="js-like-data">
+													{{ pub.likeContents | length }}
+												</span>
+											</a>
+										</li>
+										{# <li><a href="#" class="icon fa-comment">128</a></li> #}
+									</ul>
+								</footer>
+							</article>
+ {% endfor %}
 				</section>
 
 
 			</div>
-
 		<!-- Footer -->
 			<footer id="footer">
-				{# <div class="inner">
-					<ul class="icons">
+				<div class="inner">
+					{# <ul class="icons">
 						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 						<li><a href="#" class="icon fa-instagram"><span class="label">Insta</span></a></li>
-					</ul>
+					</ul>  #}
 					<ul class="copyright">
 						<li>&copy; So-SyA</li>
 					</ul>
-				</div> #}
+				</div>
 			</footer>
+	
 
 
 </div>
@@ -70,15 +117,30 @@ a.button.fit:hover{
       <div class="modal-body" style="padding-top: 0;">
         {% for follow in followings %}
 				<div class="request-details">
-					<div class="row" style="box-shadow: 0 1px 0 0 #cdcdcd;">
+					<div class="row" style="box-shadow: 0 1px 0 0 #cdcdcd ;">
 						<div class="noty-user-img">
 							<img style="padding-top: 25px; width: 100px; height: 125px;" src="{{ asset(follow.following.dataUser.link) }}" alt="">
 						</div>		  		
 						<div class="request-info" style="padding: 7.5%;">
 							<p>{{follow.following.civility.firstName}}  {{follow.following.civility.name}}</p>
 						</div> 
-						<div>
-							<button>TEST</button>
+						<div style="margin-top:8%;margin-left:auto;margin-right:2%;">
+							<a href="{{ path('follow_this', {'id': follow.following.id}) }}" class="button alt js-follow">
+								{% if follow.following.isFollowByUser(app.user) %}
+								{% set data = "Following"  %}
+								{% else %}
+								{% set data = "Follow" %}
+								{% endif %}
+								<div
+								{# Si on a l'activiter alors ça ajoute la balise #}
+								{% if follow.following.isFollowByUser(app.user) %}
+								class="followDiv removeFollow"
+								{% else %}
+								class="followDiv addFollow"
+								{% endif %}> 
+										<span class="js-data">{{ data }}</span>
+								</div>
+						</a>
 						</div>
 					</div> 				
 				</div><!--request-detailse end-->
@@ -97,14 +159,34 @@ a.button.fit:hover{
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Vos abonnés</h5>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="padding-top: 0;">
       	{% for follow in followers %}
 				<div class="request-details">
+					<div class="row" style="box-shadow: 0 1px 0 0 #cdcdcd ;">
 					<div class="noty-user-img">
-						<img src="{{ asset(follow.follower.dataUser.link) }}" alt="">
+						<img style="padding-top: 25px; width: 100px; height: 125px;" src="{{ asset(follow.follower.dataUser.link) }}" alt="">
 					</div>		  		
-					<div class="request-info"><h3>{{follow.follower.civility.firstName}}  {{follow.follower.civility.name}}</h3></div>  				
+					<div class="request-info" style="padding: 7.5%;"><h3>{{follow.follower.civility.firstName}}  {{follow.follower.civility.name}}</h3></div>  				
+					<div style="margin-top:8%;margin-left:auto;margin-right:2%;">
+						<a href="{{ path('follow_this', {'id': follow.follower.id}) }}" class="button alt js-follow">
+								{% if follow.follower.isFollowByUser(app.user) %}
+								{% set data = "Following"  %}
+								{% else %}
+								{% set data = "Follow" %}
+								{% endif %}
+								<div
+								{# Si on a l'activiter alors ça ajoute la balise #}
+								{% if follow.follower.isFollowByUser(app.user) %}
+								class="followDiv removeFollow"
+								{% else %}
+								class="followDiv addFollow"
+								{% endif %}> 
+										<span class="js-data">{{ data }}</span>
+								</div>
+						</a>
+					</div>
 				</div><!--request-detailse end-->
+				</div>
 				<!-- code here -->
    			{% endfor %}
       </div>
@@ -140,4 +222,73 @@ a.button.fit:hover{
 {% endblock %}
 
 {% block javascripts %}
+	{# Axios #}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // fonction de l'evenement
+        function onClickBtnFollow(event){
+            event.preventDefault();
+            // les variables
+            const url = this.href;
+            const btn = this.querySelector('div.followDiv');
+            const span = this.querySelector('span.js-data');
+            // la requete
+            axios.get(url).then(function(response) {
+                if (btn.classList.contains('addFollow')) {
+					span.textContent = "Following";
+                    btn.classList.replace('addFollow', 'removeFollow');
+                } else {
+					span.textContent = "Follow";
+                    btn.classList.replace('removeFollow', 'addFollow'); 
+                } 
+            }).catch(function (error) {
+                if (error.response.status === 403) {
+                    window.alert("Accès refusé !");
+                } else if (error.response.status === 404) {
+                    window.alert("Requête non trouvée !");
+                } else if (error.response.status === 401) {
+                    window.alert("Vous n'êtes pas connecté !");
+                } else {
+                    window.alert("Une erreur s'est produite, réessayez plus tard");
+                }
+            });
+        }
+        // pour chaque a avec la class js-act , boucle les liens
+        document.querySelectorAll('a.js-follow').forEach(function(link){
+            // ajoute l'evenement on click
+            link.addEventListener('click', onClickBtnFollow);
+        })
+
+				function onClickBtnLike(event){
+            event.preventDefault();
+            // les variables
+            const url = this.href;
+            const spanCount = this.querySelector('span.js-like-data');
+						const icone = this.querySelector('i');
+            // la requete
+            axios.get(url).then(function(response) {
+							spanCount.textContent = response.data.likes ;
+							if (icone.classList.contains('fas')) {
+									icone.classList.replace('fas', 'far');
+							} else {
+									icone.classList.replace('far', 'fas'); 
+							} 
+            }).catch(function (error) {
+                if (error.response.status === 403) {
+                    window.alert("Accès refusé !");
+                } else if (error.response.status === 404) {
+                    window.alert("Requête non trouvée !");
+                } else if (error.response.status === 401) {
+                    window.alert("Vous n'êtes pas connecté !");
+                } else {
+                    window.alert("Une erreur s'est produite, réessayez plus tard");
+                }
+            });
+        }
+        // pour chaque a avec la class js-act , boucle les liens
+        document.querySelectorAll('a.js-like').forEach(function(link){
+            // ajoute l'evenement on click
+            link.addEventListener('click', onClickBtnLike);
+        })
+    </script>
 {% endblock %}
