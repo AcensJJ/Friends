@@ -162,15 +162,15 @@ class DefaultController extends AbstractController
                 $data->setLink("assets/images/resources/pp/$filename")
                     ->setContent($post);
 
-            // upload BG
-            $file = $request->files->get('post')['bgLink'];
-            $upload_directory = $this->getParameter('upload_directory_bg');
-            $filename = md5(uniqid()) . '.' . $file->guessExtension();
-            $file->move(
-                $upload_directory,
-                $filename
-            );
-            $data->setBgLink("assets/images/resources/bg/$filename");
+            // // upload BG
+            // $file = $request->files->get('post')['bgLink'];
+            // $upload_directory = $this->getParameter('upload_directory_bg');
+            // $filename = md5(uniqid()) . '.' . $file->guessExtension();
+            // $file->move(
+            //     $upload_directory,
+            //     $filename
+            // );
+            // $data->setBgLink("assets/images/resources/bg/$filename");
               
             $manager->persist($data);
             $manager->flush();
