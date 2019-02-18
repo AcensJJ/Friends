@@ -59,7 +59,6 @@ a.button.fit:hover{
 				</section>
 		
 				<section id="tree">
-				{{dump(publications)}}
 	 {% for pub in publications %}
 
 	<article class="post">
@@ -71,12 +70,12 @@ a.button.fit:hover{
 									</div>
 									<div class="meta" style="padding:1%;">
 
-<div class="dropdown" >
-  <span>...</span>
-  <div class="dropdown-content">
-    <a>reports</a>
-  </div>
-</div>
+								<div class="dropdown" >
+									<span>...</span>
+									<div class="dropdown-content">
+										<a>Signaler</a>
+									</div>
+								</div>
 										<time class="published">{{ pub.createAt.date | date('d/m/Y') }}</time>
 										<a href=" {{ path('user_page', {'id': pub.user.id}) }}" class="author">
 											<span class="name">{{ pub.user.civility.name }} {{ pub.user.civility.firstName }}</span>
