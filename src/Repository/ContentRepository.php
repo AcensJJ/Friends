@@ -19,11 +19,11 @@ class ContentRepository extends ServiceEntityRepository
         parent::__construct($registry, Content::class);
     }
 
-    public function findPublication($followingID, $limit, $offset = 0)
+    public function findPublication($IDtoSend, $limit, $offset = 0)
     {
         $query = $this->createQueryBuilder('c')
                     ->where('c.user in (:user)')
-                    ->setParameter('user', $followingID)
+                    ->setParameter('user', $IDtoSend)
                     ->andWhere('c.enable = 1')
                     ->orderBy('c.createAt', 'DESC')
                     ->setFirstResult($offset)

@@ -26,13 +26,13 @@ class ImgContent
      */
     private $img;
 
+    public function __toString() {
+        return (string) "Voir les images";
+    }
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function __toString() {
-        return (string) "Image";
     }
 
     public function getContent(): ?Content
