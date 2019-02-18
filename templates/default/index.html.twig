@@ -59,6 +59,7 @@ a.button.fit:hover{
 				</section>
 		
 				<section id="tree">
+				{{dump(publications)}}
 	 {% for pub in publications %}
 
 	<article class="post">
@@ -84,13 +85,12 @@ a.button.fit:hover{
 									</div>
 								</header>
 									{% for img in pub.imgContent %}
-								<a href="#" class="image featured">
-							
-									<img src="{{ asset(img.img) }}" alt=""  />
-								
-								</a>
+									<a href="#" class="image featured">
+										<img src="{{ asset(img.img) }}" alt=""  />
+									</a>
 								{% endfor %}
-								<p>{{ pub.title }}</p>
+
+								<p>{{ pub.text }}</p>
 								<footer>
 									{# <ul class="actions">
 										<li>
