@@ -62,7 +62,7 @@ class DefaultController extends AbstractController
                     );
                     // associé l'image au post
                     $images = new ImgContent(); 
-                    $images->setImg("assets/images/ressources/post/$filename")
+                    $images->setImg("assets/images/resources/post/$filename")
                         ->setContent($post);
                     $manager->persist($images);
                     $manager->flush();
@@ -76,13 +76,13 @@ class DefaultController extends AbstractController
 
         $i = 0;
         foreach ($following as $follow) {
-            $followingID[$i] = $follow->getFollowing();
+            $IDtoSend[$i] = $follow->getFollowing();
             $i = $i + 1;
         }
         $limit = 50;
 
         $publication = $this->getDoctrine()->getRepository(Content::class)
-                ->findPublication($followingID, $limit);
+                ->findPublication($IDtoSend, $limit);
 
 
         return $this->render('default/index.html.twig', [
@@ -91,7 +91,6 @@ class DefaultController extends AbstractController
             'form' => $form->createView(),
             'followers' => $follower,
             'publications' => $publication,
-            'limit' => $limit,
         ]);
     }
 
@@ -160,7 +159,7 @@ class DefaultController extends AbstractController
                     $upload_directory,
                     $filename
                 );
-                $data->setLink("assets/images/ressources/pp/$filename")
+                $data->setLink("assets/images/resources/pp/$filename")
                     ->setContent($post);
 
             // upload BG
@@ -171,7 +170,7 @@ class DefaultController extends AbstractController
                 $upload_directory,
                 $filename
             );
-            $data->setBgLink("assets/images/ressources/bg/$filename");
+            $data->setBgLink("assets/images/resources/bg/$filename");
               
             $manager->persist($data);
             $manager->flush();

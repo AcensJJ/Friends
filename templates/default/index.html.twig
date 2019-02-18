@@ -35,7 +35,7 @@ a.button.fit:hover{
 						<a data-toggle="modal" data-target="#exampleModal" class="button fit">Following : {{ app.user.followers | length }}</a>
 						<a data-toggle="modal" data-target="#exampleModal2" class="button fit">Followers : {{ app.user.followings | length }}</a>
 						<a data-toggle="modal" data-target="#publierModal" class="button fit">Publier</a>
-						<a href="{{ path('user_page_profil') }}" class="button fit">Voir votre profil</a>
+						<a href="{{ path('user_page_profil') }}" class="button fit">Vos publications</a>
 
 				</section>
 		
@@ -57,9 +57,13 @@ a.button.fit:hover{
 										</a>
 									</div>
 								</header>
+									{% for img in pub.imgContent %}
 								<a href="#" class="image featured">
-									{# <img src="	{{ pub.imgContent }}" alt="" /> #}
+							
+									<img src="{{ asset(img.img) }}" alt=""  />
+								
 								</a>
+								{% endfor %}
 								<p>{{ pub.title }}</p>
 								<footer>
 									{# <ul class="actions">
