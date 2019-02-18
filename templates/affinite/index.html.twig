@@ -1,0 +1,65 @@
+
+{% extends 'base.html.Twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('assets/nav/css/main.css') }}"/>
+<style>
+.resize{
+    margin: 0;
+    padding: 0;
+}
+.content-text{
+    text-align: center;
+    margin: 10px;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div id="wrapper" style="background-color:white!important;">
+
+				<!-- Menu -->
+					
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section>
+                         <article class="post">
+ 
+					<header>			
+                        <div class="title"> <h3>Résultat de la recherche : " " -  resultat(s)</h3>	</div>
+                    </header>
+                    <div class="row">
+                    
+                        
+                       
+                        <div class="col-2 col-6-medium col-12-small">
+                            <div class="ui link cards">
+                                <a href="" class="hvr-float resize">
+                                    <div class="card">
+                                        <div class="image">
+                                            <img src="" style="width: 100%; height: 150px;">
+                                        </div>
+                                        <div class="content">
+                                            <div class="header content-text"> nom </div>
+                                        </div>
+                                    </div>
+                                </a> 
+                            </div> 
+                        </div>  
+                         
+        
+                </div>
+            </section>
+
+
+			</div>
+</article>
+
+</div>
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}
