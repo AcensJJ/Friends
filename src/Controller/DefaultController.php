@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\Follow;
+use App\Entity\Report;
 use App\Form\DataType;
 use App\Form\PostType;
 use App\Entity\Content;
 use App\Entity\Civility;
 use App\Entity\DataUser;
+use App\Form\ReportsType;
 use App\Entity\ImgContent;
 use App\Form\CivilityType;
 use App\Form\ImgContentType;
@@ -194,9 +196,64 @@ class DefaultController extends AbstractController
         if($civility == null){
             return $this->redirectToRoute('civility');
         }
-        
+      
         return $this->render('default/conditions.html.twig', [
             'controller_name' => 'Conditions',
+        ]);
+    }
+
+    /**
+     * @Route("/social/reports/{type}/{id}", name="reports")
+     */
+    public function reports(UserInterFace $user = null, ObjectManager $manager, Request $request)
+    {
+        // Test si la civilité est config - Add in all controller fnct
+        $civility = $user->getCivility();
+        if($civility == null){
+            return $this->redirectToRoute('civility');
+        }
+        $type = $request->attributes->get('type');
+        $id = $request->attributes->get('id');
+
+        if($type == 1){
+            $contentReported = $this->getDoctrine()->getRepository(Content::class)->findBy(array('id' => $id));
+        }else if ($type == 2){
+            $userReported = $this->getDoctrine()->getRepository(User::class)->findBy(array('id' => $id));
+        }else{
+            $commentReported = $this->getDoctrine()->getRepository(CommentContent::class)->findBy(array('id' => $id));
+        }
+
+        $report = new Report();
+        $form = $this->createForm(ReportsType::class, $report);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+        
+            $report->setCreateAt(new \DateTime());
+            if($type == 1){
+                $report->content($contentReported);
+            }else if ($type == 2){
+                $report->user($userReported);
+            }else{
+                $report->comment($commentReported);
+            }
+            if($user != null){
+                $report->reportedBy($user);
+            }
+            if($user != null){
+                $report->reportedBy($user);
+            }
+            $manager->persist($report);
+            $manager->flush();
+            $this->addFlash('success', 'L\'élément a bien était signalé');
+            return $this->redirectToRoute('social');
+            }
+        
+
+        return $this->render('default/reports.html.twig', [
+            'controller_name' => 'Reports',
+            'form' => $form->createView(),
+            'type' => $type,
+            'id' => $id,
         ]);
     }
 

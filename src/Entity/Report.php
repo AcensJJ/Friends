@@ -18,7 +18,7 @@ class Report
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="reports")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $reportedBy;
 
