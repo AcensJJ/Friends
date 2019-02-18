@@ -89,4 +89,24 @@ class UserController extends AbstractController
             , 400);
     }
 
+/**
+* @Route("/social/user/postUser", name="postUser")
+*/
+public function postUser(User $utilisateur, UserInterface $user, ObjectManager $manager)
+ {
+    $civility = $user->getCivility();
+    if($civility == null){
+        return $this->redirectToRoute('civility');        
+    }
+
+
+
+    return $this->render('default/index.html.twig', [
+        'controller_name' => 'Social',
+        'followings' => $following ,
+    ]);
+
+ }
+
+
 }
