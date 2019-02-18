@@ -98,6 +98,11 @@ a.button.fit:hover{
 						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 						<li><a href="#" class="icon fa-instagram"><span class="label">Insta</span></a></li>
 					</ul>  #}
+
+					<a href="#" class="image avatar"><img src="{{ asset(app.user.dataUser.link) }}" alt="" /></a>
+					<h1><strong>{{app.user.civility.name}}</strong>  |  {{app.user.civility.firstName}}<br />
+				{{app.user.civility.description}}<br />
+					</h1>
 					<ul class="copyright">
 						<li>&copy; So-SyA</li>
 					</ul>
