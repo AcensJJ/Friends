@@ -89,7 +89,9 @@ a.button.fit:hover{
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
+.likeBtn{
+  border-bottom-width: 0px;
+}
 </style>
 		 {% endblock %}
 		 {% block body %}
@@ -122,7 +124,7 @@ a.button.fit:hover{
 								</div>
 
 
-										<time class="published">{{ pub.createAt.date | date('d/m/Y') }}</time>
+										<time class="published" style="margin-top: 0px;">{{ pub.createAt.date | date('d/m/Y') }}</time>
 										<a href=" {{ path('user_page', {'id': pub.user.id}) }}" class="author">
 											<span class="name">{{ pub.user.civility.name }} {{ pub.user.civility.firstName }}</span>
 											<img src="{{ pub.user.dataUser.link }}" alt="" />
@@ -178,9 +180,6 @@ a.button.fit:hover{
 					<h1><strong>{{app.user.civility.name}}</strong>  |  {{app.user.civility.firstName}}<br />
 				{{app.user.civility.description}}<br />
 					</h1>
-					<ul class="copyright">
-						<li>&copy; So-Sy</li>
-					</ul>
 				</div>
 			</footer>
 	
