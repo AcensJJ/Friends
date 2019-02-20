@@ -8,6 +8,50 @@
 		   
 
 <style>  
+/* Dropup Button */
+.dropbtn {
+  color: white;
+  border: none;
+	box-shadow: inset 0 0 0 0 #A1AFA0;
+}
+
+/* The container <div> - needed to position the dropup content */
+.dropup {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropup content (Hidden by Default) */
+.dropup-content {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropup */
+.dropup-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+	text-align: left;
+}
+
+/* Change color of dropup links on hover */
+.dropup-content a:hover {
+	background-color: #ddd
+	}
+
+/* Show the dropup menu on hover */
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+/* Change the background color of the dropup button when the dropup content is shown */
 .modal-body{
 	height:350px;
 	overflow:hidden;
@@ -45,7 +89,9 @@ a.button.fit:hover{
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
+.likeBtn{
+  border-bottom-width: 0px;
+}
 </style>
 		 {% endblock %}
 		 {% block body %}
@@ -70,13 +116,15 @@ a.button.fit:hover{
 									</div>
 									<div class="meta" style="padding:1%;">
 
-								<div class="dropdown" >
-									<span>...</span>
-									<div class="dropdown-content">
-										<a>Signaler</a>
+								<div class="dropup">
+									<button class="dropbtn">...</button>
+									<div class="dropup-content">
+										<a href="{{ path('reports', {'type': '1','id': pub.id}) }}">Signaler</a>
 									</div>
 								</div>
-										<time class="published">{{ pub.createAt.date | date('d/m/Y') }}</time>
+
+
+										<time class="published" style="margin-top: 0px;">{{ pub.createAt.date | date('d/m/Y') }}</time>
 										<a href=" {{ path('user_page', {'id': pub.user.id}) }}" class="author">
 											<span class="name">{{ pub.user.civility.name }} {{ pub.user.civility.firstName }}</span>
 											<img src="{{ pub.user.dataUser.link }}" alt="" />
@@ -132,9 +180,6 @@ a.button.fit:hover{
 					<h1><strong>{{app.user.civility.name}}</strong>  |  {{app.user.civility.firstName}}<br />
 				{{app.user.civility.description}}<br />
 					</h1>
-					<ul class="copyright">
-						<li>&copy; So-SyA</li>
-					</ul>
 				</div>
 			</footer>
 	

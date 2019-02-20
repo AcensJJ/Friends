@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>So-SyA</title>
+        <title>So-Sy</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
@@ -21,13 +21,13 @@
             <!-- Header -->
             <header id="header">
                 <h1>
-                    <a href="{{ path('social') }}">So-SyA</a>
+                    <a href="{{ path('social') }}">So-Sy</a>
                 </h1>
                 <nav class="links">
                     <ul>
                         <li><a href="{{ path('social') }}">Accueil</a></li>
                         <li><a href="{{ path('user_page_profil') }}">Mon profil</a></li>
-                              <li><a href="{{ path('affinite') }}">Affinité</a></li>
+                        <li><a href="{{ path('affinite') }}">Affinité</a></li>
                         <li><a href="{{ path('categories') }}">Catégories</a></li>
                         
                         {% if app.user is not null %}
@@ -105,6 +105,7 @@
                         <li>
                             <a href="{{ path('fos_user_security_logout') }}" class="button large fit">Déconnexion</a>
                         </li>
+						<li style="color: #fafafa;">&copy; So-Sy</li>
                     </ul>
                 </section>
             </section>
