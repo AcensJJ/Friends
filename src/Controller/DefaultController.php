@@ -97,7 +97,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/social/civilite", name="civility")
+     * @Route("/user/civilite", name="civility")
      */
     public function civility(UserInterface $user, ObjectManager $manager, Request $request)
     {
@@ -136,7 +136,7 @@ class DefaultController extends AbstractController
     }
 
      /**
-     * @Route("/social/data", name="data")
+     * @Route("/user/data", name="data")
      */
     public function data(UserInterface $user, ObjectManager $manager, Request $request)
     {
@@ -187,16 +187,10 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/social/Conditions", name="conditions")
+     * @Route("/Conditions", name="conditions")
      */
-    public function conditions(UserInterFace $user = null)
+    public function conditions()
     {
-        // Test si la civilité est config - Add in all controller fnct
-        $civility = $user->getCivility();
-        if($civility == null){
-            return $this->redirectToRoute('civility');
-        }
-      
         return $this->render('default/conditions.html.twig', [
             'controller_name' => 'Conditions',
         ]);

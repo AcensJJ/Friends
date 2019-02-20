@@ -17,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CategoriesController extends AbstractController
 {
     /**
-     * @Route("/social/categories", name="categories")
+     * @Route("/rencontre/categories", name="categories")
      */
     public function categories(ObjectManager $manager , Request $request, UserInterFace $user = null)
     {
@@ -41,7 +41,7 @@ class CategoriesController extends AbstractController
 
 
     /**
-     * @Route("/social/categories/{id}", name="souscategories")
+     * @Route("/rencontre/categories/{id}", name="souscategories")
      */
     public function souscategories($id = null ,ObjectManager $manager , Request $request, UserInterface $user = null, ActivityRepository $repo)
     {  
@@ -65,7 +65,7 @@ class CategoriesController extends AbstractController
     /**
      * Permet d'avoir ou ne plus avoir l'activité
      *
-     * @Route("/social/jquery/activity/{id}", name="activity_change")
+     * @Route("/jquery/activity/{id}", name="activity_change")
      * 
      * @param Activity $activity
      * @param ObjectManager $manager

@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class SearchbarController extends AbstractController
 {
     /**
-     * @Route("social/search/", name="search")
+     * @Route("/search/", name="search")
      */
     public function search(Request $request , ObjectManager $manager, UserInterFace $user)
     { 

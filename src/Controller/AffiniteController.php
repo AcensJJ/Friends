@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AffiniteController extends AbstractController
 {
     /**
-     * @Route("/affinite", name="affinite")
+     * @Route("/rencontre", name="affinite")
      */
     public function affinite(UserInterface $user, ObjectManager $manager, Request $reques)
     {

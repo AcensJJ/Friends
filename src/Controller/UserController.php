@@ -50,7 +50,7 @@ class UserController extends AbstractController
     /**
      * Gestion des abonnements (follow / unfollow)
      *
-     * @Route("/social/jquery/follow/{id}", name="follow_this")
+     * @Route("/jquery/follow/{id}", name="follow_this")
      * @param User $utilisateur
      * @param ObjectManager $manager
      * @param UserInterface $user
@@ -90,7 +90,7 @@ class UserController extends AbstractController
     }
 
 /**
-* @Route("/social/user/postUser", name="postUser")
+* @Route("/user/postUser", name="postUser")
 */
 public function postUser(User $utilisateur, UserInterface $user, ObjectManager $manager)
  {
