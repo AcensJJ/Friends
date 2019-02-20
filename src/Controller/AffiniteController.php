@@ -55,6 +55,7 @@ class AffiniteController extends AbstractController
         }
 
         // boucle de tirage nb aléa et pas identique
+        // peut être modifier ligne : $rdm[$i] = $random; et $i = 0; 
         $rdm = array();
         for ($i=0; $i < $tirage; $i++) { 
             $random = random_int($min, $max);
@@ -67,10 +68,10 @@ class AffiniteController extends AbstractController
         }
 
         // boucle recuperant les user et testant leur affinité
-        $rank = array();
-        $un = 0;
-        $deux = 0;
-        $trois = 0;
+        // $rank = array();
+        // $un = 0;
+        // $deux = 0;
+        // $trois = 0;
         $userTested = array();
         $a = 0;
         foreach($rdm as $id){
@@ -82,7 +83,7 @@ class AffiniteController extends AbstractController
                 $hobbiesCompare = $utilisateur->getHobbies();
                 $userTested[$a] = array('user' => $utilisateur);
                 // hobbies name
-                $i = 0;
+                $    = 0;
                 $nameHobbiesUTilisateurSelected = array();
                 foreach ($hobbiesCompare as $keyHobbies) {
                     $nameHobbiesUTilisateurSelected[$i] = $keyHobbies->getActivity()->getName();
@@ -110,7 +111,6 @@ class AffiniteController extends AbstractController
         return $this->render('affinite/index.html.twig', [
             'controller_name' => 'AffiniteController',
             'return' => $userTested,
-            'return2' => $hobbiesCompare,
         ]);
     }
 }
