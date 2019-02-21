@@ -46,12 +46,12 @@ class AffiniteController extends AbstractController
         
         // créer le nb de tirage 
         $total = $max - $min;
-        if($total <= 5){
+        if($total <= 15){
             $tirage = 3;
-        }else if($total <= 20){
-            $tirage = 5;
-        }else{
-            $tirage = 20;
+        } else if($total <= 45){
+            $tirage = 15;
+        } else {
+            $tirage = 30;
         }
 
         // boucle de tirage nb aléa et pas identique
@@ -110,7 +110,7 @@ class AffiniteController extends AbstractController
 
         return $this->render('affinite/index.html.twig', [
             'controller_name' => 'AffiniteController',
-            'return' => $userTested,
+            'userTested' => $userTested,
         ]);
     }
 }
