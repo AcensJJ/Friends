@@ -1,11 +1,11 @@
 easy_admin:
    entities:
        User :
-          disabled_actions: ['new']
+          disabled_actions: ['new', 'delete']
           class: App\Entity\User
           label: 'Utilisateurs'
           edit:
-              title: 'Editer un utilisateur'
+              title: 'Editer un utilisateur [N°%%entity_id%%]'
               fields:
                   - { type: 'tab' , label: 'Informations utilisateur', icon: 'lock' }
                   - { property: 'username', label: 'Pseudo' }
@@ -20,7 +20,8 @@ easy_admin:
                   - { property: 'lastLogin', label: 'Dernière connexion' }
                   - { property: 'roles', label: 'Role(s)' }
                   - { property: 'enabled', label: 'Activation' }
-                  - { property: 'civility', label: 'Information' }
+                  - { property: 'civility', label: 'Civiliter' }
+                  - { property: 'dataUser', label: 'Data' }
                   - { property: 'contents', label: 'Publication' }
                   - { property: 'commentContents', label: 'Commentaire de publication' }
                   - { property: 'reports', label: 'Element reporté' }
