@@ -16,7 +16,7 @@ easy_admin:
                   - { property: 'text', label: "Texte" }
                   - { property: 'createAt', label: 'Crée le', format: 'j/n/Y' }
                   - { property: 'imgContent', label: 'Image' }
-                #   - { property: 'imgContent.img', label: 'Image', type: 'image'}
+                #   - { property: 'imgContent', label: 'Image 2', type: 'image'}
                   - { property: 'user', label: 'Utilisateur' }
                   - { property: 'reports', label: 'Signalé' }
                   - { property: 'enable', label: 'Activation' }
