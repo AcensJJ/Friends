@@ -16,7 +16,7 @@ class PostController extends AbstractController
     /**
      * Gestion des likes (like / unlike)
      *
-     * @Route("/social/jquery/like/{id}", name="like_this")
+     * @Route("/jquery/like/{id}", name="like_this")
      * @param Content $post
      * @param ObjectManager $manager
      * @param UserInterface $user

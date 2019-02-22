@@ -20,20 +20,19 @@
 {% block body %}
 
 	<div id="main">
-	{% for categorie in categories %}
 		<article class="thumb">
-			<a class="image effet-zoom" href="{{ path('souscategories',{"id":categorie.id})}}">
-				<img class="img-resize" src="{{ asset(categorie.image) }}" alt="" />
-			</a>
-		</article>
-	
-	{% endfor %}
-
-	 <article class="thumb">
 			<a class="image effet-zoom" href="#">
 				<img class="img-resize" src="{{ asset('assets/images/categories/logo.png') }}" alt="" />
 			</a>
 		</article>
+		
+		{% for categorie in categories %}
+			<article class="thumb">
+				<a class="image effet-zoom" href="{{ path('souscategories',{"id":categorie.id})}}">
+					<img class="img-resize" src="{{ asset(categorie.image) }}" alt="" />
+				</a>
+			</article>
+		{% endfor %}
 
 		<article class="thumb">
 			<a class="image effet-zoom" href="#">
