@@ -27,7 +27,8 @@ class ImgContent
     private $img;
 
     public function __toString() {
-        return (string) "Voir les images";
+        // return (string) "Voir les images";
+        return $this->getImg();
     }
 
     public function getId(): ?int
