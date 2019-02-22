@@ -16,7 +16,7 @@ class UserController extends AbstractController
     /**
      * @Route("/social/user/page/{id}", name="user_page")
      */
-    public function index(User $utilisateur, UserInterface $user, ObjectManager $manager)
+    public function index(User $utilisateur, UserInterface $user = null, ObjectManager $manager)
     {   
         // Test si la civilité est config - Add in all controller fnct
         $civility = $user->getCivility();
@@ -27,6 +27,7 @@ class UserController extends AbstractController
         return $this->render('user/user.html.twig', [
             'controller_name' => 'Page de profil de',
             'utilisateur' => $utilisateur,
+            'user' => $user,
         ]);
     }
 

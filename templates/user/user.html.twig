@@ -80,23 +80,25 @@
             </span>
             <h1>{{utilisateur.civility.name}} {{utilisateur.civility.firstName}}</h1>
             <p>{{utilisateur.civility.description}}</p>
-            {% if utilisateur != app.user %}
-                <a href="{{ path('follow_this', {'id': utilisateur.id}) }}" class="button alt js-follow">
-                    {% if utilisateur.isFollowByUser(app.user) %}
-                    {% set data = "Following"  %}
-                    {% else %}
-                    {% set data = "Follow" %}
-                    {% endif %}
-                    <div
-                    {# Si on a l'activiter alors ça ajoute la balise #}
-                    {% if utilisateur.isFollowByUser(app.user) %}
-                    class="followDiv removeFollow"
-                    {% else %}
-                    class="followDiv addFollow"
-                    {% endif %}> 
-                        <span class="js-data">{{ data }}</span>
-                    </div>
-                </a>
+            {% if user != null %}
+                {% if utilisateur != app.user %}
+                    <a href="{{ path('follow_this', {'id': utilisateur.id}) }}" class="button alt js-follow">
+                        {% if utilisateur.isFollowByUser(app.user) %}
+                        {% set data = "Following"  %}
+                        {% else %}
+                        {% set data = "Follow" %}
+                        {% endif %}
+                        <div
+                        {# Si on a l'activiter alors ça ajoute la balise #}
+                        {% if utilisateur.isFollowByUser(app.user) %}
+                        class="followDiv removeFollow"
+                        {% else %}
+                        class="followDiv addFollow"
+                        {% endif %}> 
+                            <span class="js-data">{{ data }}</span>
+                        </div>
+                    </a>
+                {% endif %}
             {% endif %}
         </header>
         <footer>

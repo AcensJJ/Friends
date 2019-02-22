@@ -97,7 +97,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/user/civilite", name="civility")
+     * @Route("/user/info/civilite", name="civility")
      */
     public function civility(UserInterface $user, ObjectManager $manager, Request $request)
     {
@@ -136,7 +136,7 @@ class DefaultController extends AbstractController
     }
 
      /**
-     * @Route("/user/data", name="data")
+     * @Route("/user/info/data", name="data")
      */
     public function data(UserInterface $user, ObjectManager $manager, Request $request)
     {

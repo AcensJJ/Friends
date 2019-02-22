@@ -14,6 +14,10 @@
 		padding: 0;
 		width: 100%;
 	}
+	.titreCate{
+		color: #fafafa;
+		font-weight: 100;
+	}
 	</style>
 {% endblock %}
 
@@ -24,6 +28,7 @@
 			<a class="image effet-zoom" href="#">
 				<img class="img-resize" src="{{ asset('assets/images/categories/logo.png') }}" alt="" />
 			</a>
+			<h2 class="titreCate">Bienvenue</h2>
 		</article>
 		
 		{% for categorie in categories %}
@@ -31,6 +36,7 @@
 				<a class="image effet-zoom" href="{{ path('souscategories',{"id":categorie.id})}}">
 					<img class="img-resize" src="{{ asset(categorie.image) }}" alt="" />
 				</a>
+				<h2 class="titreCate">{{ categorie.name }}</h2>
 			</article>
 		{% endfor %}
 
@@ -38,6 +44,7 @@
 			<a class="image effet-zoom" href="#">
 				<img class="img-resize" src="{{ asset('assets/images/categories/avenir.png') }}" alt="" />
 			</a>
+			<h2 class="titreCate">Bientot</h2>
 		</article> 
 </div>
 {% endblock %}

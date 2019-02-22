@@ -59,6 +59,7 @@ class CategoriesController extends AbstractController
         return $this->render('categories/activity.html.twig', [
             'controller_name' => 'Activités',
             'activity' => $activity,
+            'user' => $user,
         ]);
     }
 
