@@ -16,19 +16,19 @@ class AnimauxActivityFixtures extends Fixture implements DependentFixtureInterfa
 
         $animaux1 = new Activity();
         $animaux1->setCategory($animaux)
-            ->setName('chat')
+            ->setName('chats')
             ->setImg('assets/images/activity/animaux/chatres.png');
         $manager->persist($animaux1);
         
         $animaux2 = new Activity();
         $animaux2->setCategory($animaux)
-            ->setName('chien')
+            ->setName('chiens')
             ->setImg('assets/images/activity/animaux/chienres.png');
         $manager->persist($animaux2);
         
         $animaux3 = new Activity();
         $animaux3->setCategory($animaux)
-            ->setName('lapin')
+            ->setName('rongeurs')
             ->setImg('assets/images/activity/animaux/lapinres.png');
         $manager->persist($animaux3);
 
@@ -40,13 +40,13 @@ class AnimauxActivityFixtures extends Fixture implements DependentFixtureInterfa
 
         $animaux5 = new Activity();
         $animaux5->setCategory($animaux)
-            ->setName('serpent')
+            ->setName('reptiles')
             ->setImg('assets/images/activity/animaux/reptileres.png');
         $manager->persist($animaux5);
         
         $animaux6 = new Activity();
         $animaux6->setCategory($animaux)
-            ->setName('iguane')
+            ->setName('Autres')
             ->setImg('assets/images/activity/animaux/iguaneres.png');
         $manager->persist($animaux6);
 

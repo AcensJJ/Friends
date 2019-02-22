@@ -74,6 +74,12 @@ class SerieActivityFixtures extends Fixture implements DependentFixtureInterface
             ->setImg('assets/images/activity/serie/survivalres.png');
         $manager->persist($serie20);
 
+        $serie22 = new Activity();
+        $serie22->setCategory($serie)
+            ->setName('Historique')
+            ->setImg('assets/images/activity/serie/survivalres.png');
+        $manager->persist($serie22);
+
         $manager->flush();
     }
 

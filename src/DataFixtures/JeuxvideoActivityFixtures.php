@@ -23,7 +23,7 @@ class JeuxvideoActivityFixtures extends Fixture implements DependentFixtureInter
         $jeuxvideo2 = new Activity();
         $jeuxvideo2->setCategory($jeuxvideo)
             ->setName('Zombie')
-            ->setImg('assets/images/activity/jeux_video/zombieres.png');
+            ->setImg('assets/images/activity/jeux_video/zombieres.jpg');
         $manager->persist($jeuxvideo2);
 
         $jeuxvideo3 = new Activity();
@@ -35,7 +35,7 @@ class JeuxvideoActivityFixtures extends Fixture implements DependentFixtureInter
         $jeuxvideo4 = new Activity();
         $jeuxvideo4->setCategory($jeuxvideo)
             ->setName('FPS')
-            ->setImg('assets/images/activity/jeux_video/fpsres.png');
+            ->setImg('assets/images/activity/jeux_video/fpsres.jpg');
         $manager->persist($jeuxvideo4);
 
         $jeuxvideo7 = new Activity();

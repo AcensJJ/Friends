@@ -27,25 +27,25 @@ class ArtActivityFixtures extends Fixture implements DependentFixtureInterface
         $manager->persist($sculpture);
 
         $artsVisuels = new Activity();
-        $artsVisuels->setName('arts visuels (peinture , dessin, etc.)')
+        $artsVisuels->setName('arts visuels')
             ->setImg('assets/images/activity/art/visuelres.png')
             ->setCategory($art);
         $manager->persist($artsVisuels);
 
         $musique = new Activity();
         $musique->setName('musique')
-            ->setImg('assets/images/activity/art/classicres.png')
+            ->setImg('assets/images/activity/art/classicres.jpg')
             ->setCategory($art);
         $manager->persist($musique);
         
         $littérature = new Activity();
-        $littérature->setName('littérature (poésie ou dramaturgie)')
+        $littérature->setName('littérature')
             ->setImg('assets/images/activity/art/litteratureres.png')
             ->setCategory($art);
         $manager->persist($littérature);
 
         $artsDeLaScène = new Activity();
-        $artsDeLaScène->setName('arts de la scène (théâtre, danse, mime, cirque)')
+        $artsDeLaScène->setName('arts de la scène')
             ->setImg('assets/images/activity/art/theatreres.png')
             ->setCategory($art);
         $manager->persist($artsDeLaScène);
@@ -57,8 +57,8 @@ class ArtActivityFixtures extends Fixture implements DependentFixtureInterface
         $manager->persist($cinema);
 
         $lesArtsMediatiques = new Activity();
-        $lesArtsMediatiques->setName('Les arts médiatiques (télévision, radio, photographie)')
-            ->setImg('assets/images/activity/art/journalismeres.png')
+        $lesArtsMediatiques->setName('Les arts médiatiques')
+            ->setImg('assets/images/activity/art/journalismeres.jpg')
             ->setCategory($art);
         $manager->persist($lesArtsMediatiques);
 

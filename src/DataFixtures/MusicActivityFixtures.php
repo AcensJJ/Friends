@@ -27,9 +27,9 @@ class MusicActivityFixtures extends Fixture implements DependentFixtureInterface
         $manager->persist($hiphop);
 
         $classic = new Activity();
-        $classic->setName('Classique')
+        $classic->setName('Jazz')
             ->setCategory($musi)
-            ->setImg('assets/images/activity/musique/classicres.png');
+            ->setImg('assets/images/activity/musique/jazzres.jgp');
         $manager->persist($classic);
 
         $electro = new Activity();
