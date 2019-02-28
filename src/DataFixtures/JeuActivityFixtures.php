@@ -46,7 +46,7 @@ class JeuActivityFixtures extends Fixture implements DependentFixtureInterface
 
         $jeux6 = new Activity();
         $jeux6->setCategory($jeux)
-            ->setName('Jeu en soirée')
+            ->setName('Jeu old school')
             ->setImg('assets/images/activity/jeux/jeusoireres.png');
         $manager->persist($jeux6);
 
