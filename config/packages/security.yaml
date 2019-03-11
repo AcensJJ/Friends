@@ -43,5 +43,8 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/social$, role: ROLE_USER }
+        - { path: ^/social/info/, role: ROLE_USER }
+        - { path: ^/social/user/profil$, role: ROLE_USER }
+        - { path: ^/rencontre$, role: ROLE_USER }
         - { path: ^/social/user/profil, role: ROLE_USER }
         

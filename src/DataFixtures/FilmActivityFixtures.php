@@ -62,6 +62,12 @@ class FilmActivityFixtures extends Fixture implements DependentFixtureInterface
             ->setImg('assets/images/activity/film/drameres.png');
         $manager->persist($film19);
 
+
+        $film22 = new Activity();
+        $film22->setCategory($film)
+            ->setName('Jeunesse')
+            ->setImg('assets/images/activity/film/jeunesseres.png');
+        $manager->persist($film22);
         $manager->flush();
     }
 

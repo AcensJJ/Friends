@@ -19,6 +19,8 @@ class AffiniteController extends AbstractController
         // Recup les activité de l'utilisateur
         $hobbies = $user->getHobbies();
         $i = 0;
+        // si l'user n'a pas de hobbies
+        $nameHobbiesUser = array();
         foreach ($hobbies as $keyHobbies) {
             $nameHobbiesUser[$i] = $keyHobbies->getActivity()->getName();
             $i++;
@@ -84,6 +86,7 @@ class AffiniteController extends AbstractController
                 $userTested[$a] = array('user' => $utilisateur);
                 // hobbies name
                 $i = 0;
+                // si l'user n'a pas de hobbie
                 $nameHobbiesUTilisateurSelected = array();
                 foreach ($hobbiesCompare as $keyHobbies) {
                     $nameHobbiesUTilisateurSelected[$i] = $keyHobbies->getActivity()->getName();

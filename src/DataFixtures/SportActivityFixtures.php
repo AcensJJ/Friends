@@ -43,6 +43,14 @@ class SportActivityFixtures extends Fixture implements DependentFixtureInterface
             ->setImg('assets/images/activity/sport/muscures.png')
             ->setCategory($sport);
         $manager->persist($muscu);
+
+        $sportete = new Activity();
+        $sportete->setName('Sports d\'été')
+            ->setImg('assets/images/activity/sport/eteres.png')
+            ->setCategory($sport);
+        $manager->persist($sportete);
+
+        
         
         $manager->flush();
     }

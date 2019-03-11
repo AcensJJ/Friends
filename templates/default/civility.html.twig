@@ -1,17 +1,18 @@
 {% extends 'base.html.twig' %}
-	{% block stylesheets %}
-		<link rel="stylesheet" href="{{ asset('assets/nav/css/main.css') }}" />
-		<style>
-	#civility_birth{
-		background:rgba(160, 160, 160, 0.075);
-	}
 
-	input{
-		margin-bottom: 2%;
-	}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/nav/css/main.css') }}" />
+	<style>
+		#civility_birth{
+			background:rgba(160, 160, 160, 0.075);
+		}
 
-		</style>
-		 {% endblock %}
+		input{
+			margin-bottom: 2%;
+		}
+	</style>
+{% endblock %}
+
 {% block body %} 
 	<div  style="background-color:white; width: 70%; margin-left: 15%; margin-right: 15%">
 		<div style="margin:auto; left:50%; right:50%; width: 75% ;margin-top:-5%;padding-top:6%;">
@@ -24,5 +25,4 @@
 			</br>		
 		</div>
 	</div>
-			
 {% endblock %}  
