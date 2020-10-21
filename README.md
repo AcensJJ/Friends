@@ -1,7 +1,7 @@
 # SoSy
 
 Ce projet est le fruit de mon 2 nd stage de mon BTS SIO réalisé chez krypton66.
-Il a était realisé en collaboration avec Morgann Riu [https://github.com/morgannito] (un autre étudiant du BTS et stagiaire).
+Il a était realisé en collaboration avec <a href="https://github.com/morgannito">Morgann Riu</a> (un autre étudiant du BTS et stagiaire).
 
 SoSy est un mixe entre un site de réseaux sociaux et de site de rencontres, à l'aide de son système de publication et de son panel 
 d'activité (pratiqué / aimé) à sélectionné, le site propose de solution innovante pour faire le rencontre de d'autres profils nous 
@@ -18,8 +18,8 @@ Nous avons aussi utilisé la technologie Axios pour les interactions du site (li
 
 ![image](https://user-images.githubusercontent.com/45235527/96745379-5d051a80-13c6-11eb-8ca6-eb30405ed5d4.png)
 
-Les images utilisées sont aussi libres de droits et retoucher à l'aide de Photoshop (filtre) afin de suivre les couleurs de notre palette du designe de notre site
-[https://github.com/AcensJJ/Friends/blob/master/palette-color.png] afin d'avoir un projet plus professionnel mais aussi utilisable légalement.
+Les images utilisées sont aussi libres de droits et retoucher à l'aide de Photoshop (filtre) afin de suivre les couleurs de <a href="https://github.com/AcensJJ/Friends/blob/master/palette-color.png">notre palette de
+ couleur</a> du designe de notre site afin d'avoir un projet plus professionnel mais aussi utilisable légalement.
 
 ![image](https://user-images.githubusercontent.com/45235527/96747858-1a910d00-13c9-11eb-9acc-748ba661be97.png)
 
