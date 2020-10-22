@@ -30,4 +30,4 @@ Les images utilisées sont aussi libres de droits et retoucher à l'aide de Phot
 # Resultat : 
 
 ![sosy1](https://user-images.githubusercontent.com/45235527/96745102-0ef01700-13c6-11eb-87ef-cdc793c7277e.PNG)
-![sosy2](https://user-images.githubusercontent.com/45235527/96745110-10b9da80-13c6-11eb-9e86-bb154b8d0839.PNG)
+![Capture](https://user-images.githubusercontent.com/45235527/96931859-4510c200-14be-11eb-96d7-6ebaa0216b6b.PNG)
