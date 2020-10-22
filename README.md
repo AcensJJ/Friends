@@ -6,7 +6,9 @@ Il a était realisé en collaboration avec <a href="https://github.com/morgannit
 SoSy est un mixe entre un site de réseaux sociaux et de site de rencontres, à l'aide de son système de publication et de son panel 
 d'activité (pratiqué / aimé) à sélectionné, le site propose de solution innovante pour faire le rencontre de d'autres profils nous 
 correspondant à l'aide d'une algorithme unique recherchant les autres usagers en fonction de leurs activités communes.
-Pour commencer Le projet a était codé à l'aide du Framework Symfony 4,
+
+
+Pour commencer Le projet a était codé à l'aide du Framework Symfony 4.
 
 ![image](https://user-images.githubusercontent.com/45235527/96745902-e9174200-13c6-11eb-9388-d6ae349db857.png)
 
