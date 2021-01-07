@@ -11,6 +11,7 @@ correspondant à l'aide d'une algorithme unique recherchant les autres usagers e
 # Le Projet
 
 Pour commencer Le projet a était codé à l'aide du Framework Symfony 4.
+Le code est responsive.
 
 ![image](https://user-images.githubusercontent.com/45235527/96745902-e9174200-13c6-11eb-9388-d6ae349db857.png)
 
