@@ -7,7 +7,6 @@ SoSy est un mixe entre un site de réseaux sociaux et de site de rencontres, à 
 d'activité (pratiqué / aimé) à sélectionner, le site propose une solution innovante pour faire la rencontre de d'autres profils nous 
 correspondant à l'aide d'une algorithme unique recherchant les autres usagers en fonction de leurs activités communes.
 
-
 # Le Projet
 
 Pour commencer Le projet a était codé à l'aide du Framework Symfony 4.
@@ -27,6 +26,10 @@ Les images utilisées sont aussi libres de droits et retoucher à l'aide de Phot
  couleur</a> du designe de notre site afin d'avoir un projet plus professionnel mais aussi utilisable légalement.
 
 ![image](https://user-images.githubusercontent.com/45235527/96747858-1a910d00-13c9-11eb-9acc-748ba661be97.png)
+
+# Documentation
+
+Configuration du projet : <a href="https://drive.google.com/file/d/1hEvdeTFaUARG0PUgI91X9p1ww5X0OiR-/view?usp=sharing">Tutoriel</a>
 
 # Resultat : 
 
