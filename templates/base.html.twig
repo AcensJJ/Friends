@@ -56,8 +56,8 @@
             <section id="menu">
                 <!-- Search -->
                 <section>
-                    <form action="#" class="search" method="get">
-                        <input style="color: #E1E1E1;" name="query" placeholder="Search" type="text"/>
+                    <form action="{{ path('search') }}" class="search" method="get" id="search">
+                        <input style="color: #E1E1E1;" name="word" placeholder="Search" type="text"/>
                     </form>
                 </section>
                 <!-- Links -->
