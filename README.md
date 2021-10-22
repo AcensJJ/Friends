@@ -31,6 +31,28 @@ Les images utilisées sont aussi libres de droits et retoucher à l'aide de Phot
 
 Configuration du projet : <a href="https://drive.google.com/file/d/1hEvdeTFaUARG0PUgI91X9p1ww5X0OiR-/view?usp=sharing">Tutoriel</a>
 
+Requirements
+============
+
+- laragon : “https://laragon.org/“
+- WAMP pour windows “https://www.wampserver.com/” (ou LAMP pour linux/max)
+- cmder pour windows “https://cmder.net/” (pas besoin pour linux/mac)
+
+Installation
+============
+
+`composer install`
+
+`php bin/console doctrine:database:create`
+
+`php bin/console doctrine:schema:update --force`
+
+`php bin/console doctrine:fixtures:load`
+
+`php bin/console server:run`
+
+http://127.0.0.1:8000
+
 # Resultat : 
 
 ![sosy1](https://user-images.githubusercontent.com/45235527/96745102-0ef01700-13c6-11eb-87ef-cdc793c7277e.PNG)
