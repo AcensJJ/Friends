@@ -34,9 +34,9 @@ Configuration du projet : <a href="https://drive.google.com/file/d/1hEvdeTFaUARG
 Requirements
 ============
 
-- laragon : “https://laragon.org/“
-- WAMP pour windows “https://www.wampserver.com/” (ou LAMP pour linux/max)
-- cmder pour windows “https://cmder.net/” (pas besoin pour linux/mac)
+- laragon : https://laragon.org/
+- WAMP pour windows https://www.wampserver.com/ (ou LAMP pour linux/max)
+- cmder pour windows https://cmder.net/ (pas besoin pour linux/mac)
 
 Installation
 ============
