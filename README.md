@@ -53,7 +53,7 @@ Installation
 
 http://127.0.0.1:8000
 
-# Resultat : 
+# Results
 
 ![sosy1](https://user-images.githubusercontent.com/45235527/96745102-0ef01700-13c6-11eb-87ef-cdc793c7277e.PNG)
 ![Capture](https://user-images.githubusercontent.com/45235527/96931859-4510c200-14be-11eb-96d7-6ebaa0216b6b.PNG)
